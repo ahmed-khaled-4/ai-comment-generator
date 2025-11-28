@@ -1,0 +1,331 @@
+{
+  "timestamp": "2025-11-28T20:36:56.558986",
+  "summary": {
+    "total_tests": 10,
+    "successful": 10,
+    "failed": 0,
+    "success_rate": "100.0%"
+  },
+  "test_results": [
+    {
+      "success": true,
+      "name": "add",
+      "type": "function",
+      "code": "def add(a, b):\n    return a + b",
+      "comment": "Args:\n    a: first number to be added\n    b: second number to be added\nReturns:\n    int: sum of two numbers",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def add(a, b):\n    return a + b",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Args:\\n    a: first number to be added\\n    b: second number to be added\\nReturns:\\n    int: sum of two numbers\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":3.567,\"prompt_tokens\":261,\"completion_tokens\":34,\"total_tokens\":295}}",
+      "latency": 3.567,
+      "tokens": {
+        "prompt_tokens": 261,
+        "completion_tokens": 34,
+        "total_tokens": 295
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 3.567,
+        "prompt_tokens": 261,
+        "completion_tokens": 34,
+        "total_tokens": 295
+      }
+    },
+    {
+      "success": true,
+      "name": "calculate_area",
+      "type": "function",
+      "code": "def calculate_area(length, width):\n    return length * width",
+      "comment": "Args:\n    length: The length of the rectangle\n    width: The width of the rectangle\nReturns:\n    int: The area of the rectangle",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def calculate_area(length, width):\n    return length * width",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Args:\\n    length: The length of the rectangle\\n    width: The width of the rectangle\\nReturns:\\n    int: The area of the rectangle\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":2.711,\"prompt_tokens\":263,\"completion_tokens\":35,\"total_tokens\":298}}",
+      "latency": 2.711,
+      "tokens": {
+        "prompt_tokens": 263,
+        "completion_tokens": 35,
+        "total_tokens": 298
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 2.711,
+        "prompt_tokens": 263,
+        "completion_tokens": 35,
+        "total_tokens": 298
+      }
+    },
+    {
+      "success": true,
+      "name": "is_even",
+      "type": "function",
+      "code": "def is_even(number):\n    if number % 2 == 0:\n        return True\n    return False",
+      "comment": "Short description line.\nArgs:\n    number: an integer to check if it's even or not\nReturns:\n    boolean: True if the input is even, False otherwise",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def is_even(number):\n    if number % 2 == 0:\n        return True\n    return False",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Short description line.\\nArgs:\\n    number: an integer to check if it's even or not\\nReturns:\\n    boolean: True if the input is even, False otherwise\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":2.944,\"prompt_tokens\":275,\"completion_tokens\":42,\"total_tokens\":317}}",
+      "latency": 2.944,
+      "tokens": {
+        "prompt_tokens": 275,
+        "completion_tokens": 42,
+        "total_tokens": 317
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 2.944,
+        "prompt_tokens": 275,
+        "completion_tokens": 42,
+        "total_tokens": 317
+      }
+    },
+    {
+      "success": true,
+      "name": "filter_positive",
+      "type": "function",
+      "code": "def filter_positive(numbers):\n    return [n for n in numbers if n > 0]",
+      "comment": "Args:\r\n    numbers: list of integers or floats\r\nReturns:\r\n    list: a new list with only positive numbers from the input list",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def filter_positive(numbers):\n    return [n for n in numbers if n > 0]",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Args:\\r\\n    numbers: list of integers or floats\\r\\nReturns:\\r\\n    list: a new list with only positive numbers from the input list\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":2.65,\"prompt_tokens\":272,\"completion_tokens\":37,\"total_tokens\":309}}",
+      "latency": 2.65,
+      "tokens": {
+        "prompt_tokens": 272,
+        "completion_tokens": 37,
+        "total_tokens": 309
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 2.65,
+        "prompt_tokens": 272,
+        "completion_tokens": 37,
+        "total_tokens": 309
+      }
+    },
+    {
+      "success": true,
+      "name": "reverse_string",
+      "type": "function",
+      "code": "def reverse_string(text):\n    return text[::-1]",
+      "comment": "Args:\n    text: The string to be reversed.\nReturns:\n    A new string that is the input string in reverse order.",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def reverse_string(text):\n    return text[::-1]",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Args:\\n    text: The string to be reversed.\\nReturns:\\n    A new string that is the input string in reverse order.\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":2.637,\"prompt_tokens\":263,\"completion_tokens\":33,\"total_tokens\":296}}",
+      "latency": 2.637,
+      "tokens": {
+        "prompt_tokens": 263,
+        "completion_tokens": 33,
+        "total_tokens": 296
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 2.637,
+        "prompt_tokens": 263,
+        "completion_tokens": 33,
+        "total_tokens": 296
+      }
+    },
+    {
+      "success": true,
+      "name": "greet",
+      "type": "function",
+      "code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"",
+      "comment": "Args:\n    name: The person to greet.\n    greeting: What to say before the person's name (default is \"Hello\").\nReturns:\n    str: A string containing a greeting for the specified person.",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "def greet(name, greeting=\"Hello\"):\n    return f\"{greeting}, {name}!\"",
+        "language": "python",
+        "comment_type": "function",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Args:\\n    name: The person to greet.\\n    greeting: What to say before the person's name (default is \\\"Hello\\\").\\nReturns:\\n    str: A string containing a greeting for the specified person.\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"function\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":3.547,\"prompt_tokens\":274,\"completion_tokens\":52,\"total_tokens\":326}}",
+      "latency": 3.547,
+      "tokens": {
+        "prompt_tokens": 274,
+        "completion_tokens": 52,
+        "total_tokens": 326
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 3.547,
+        "prompt_tokens": 274,
+        "completion_tokens": 52,
+        "total_tokens": 326
+      }
+    },
+    {
+      "success": true,
+      "name": "Calculator",
+      "type": "class",
+      "code": "class Calculator:\n    def __init__(self):\n        self.value = 0\n    \n    def add(self, x):\n        self.value += x\n        return self.value",
+      "comment": "Short description of the Calculator class. This class is a simple calculator that can perform addition operations. It has one attribute 'value' which stores the current value of the calculator. The 'add' method takes an integer as input and adds it to the current value, returning the new total.\nAttributes:\n    value: An integer representing the current value of the calculator. This is initialized to 0 when a new Calculator object is created.\nRules:\n- Use this class in conjunction with its methods to perform addition operations on integers. The 'add' method takes an integer as input and adds it to the current value, returning the new total.",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "class Calculator:\n    def __init__(self):\n        self.value = 0\n    \n    def add(self, x):\n        self.value += x\n        return self.value",
+        "language": "python",
+        "comment_type": "class",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"Short description of the Calculator class. This class is a simple calculator that can perform addition operations. It has one attribute 'value' which stores the current value of the calculator. The 'add' method takes an integer as input and adds it to the current value, returning the new total.\\nAttributes:\\n    value: An integer representing the current value of the calculator. This is initialized to 0 when a new Calculator object is created.\\nRules:\\n- Use this class in conjunction with its methods to perform addition operations on integers. The 'add' method takes an integer as input and adds it to the current value, returning the new total.\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"class\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":9.701,\"prompt_tokens\":214,\"completion_tokens\":142,\"total_tokens\":356}}",
+      "latency": 9.701,
+      "tokens": {
+        "prompt_tokens": 214,
+        "completion_tokens": 142,
+        "total_tokens": 356
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 9.701,
+        "prompt_tokens": 214,
+        "completion_tokens": 142,
+        "total_tokens": 356
+      }
+    },
+    {
+      "success": true,
+      "name": "Person",
+      "type": "class",
+      "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age",
+      "comment": "",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "class Person:\n    def __init__(self, name, age):\n        self.name = name\n        self.age = age",
+        "language": "python",
+        "comment_type": "class",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"class\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":1.167,\"prompt_tokens\":198,\"completion_tokens\":1,\"total_tokens\":199}}",
+      "latency": 1.167,
+      "tokens": {
+        "prompt_tokens": 198,
+        "completion_tokens": 1,
+        "total_tokens": 199
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 1.167,
+        "prompt_tokens": 198,
+        "completion_tokens": 1,
+        "total_tokens": 199
+      }
+    },
+    {
+      "success": true,
+      "name": "Animal",
+      "type": "class",
+      "code": "class Animal:\n    def __init__(self, name):\n        self.name = name",
+      "comment": "",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "class Animal:\n    def __init__(self, name):\n        self.name = name",
+        "language": "python",
+        "comment_type": "class",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"class\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":1.086,\"prompt_tokens\":188,\"completion_tokens\":1,\"total_tokens\":189}}",
+      "latency": 1.086,
+      "tokens": {
+        "prompt_tokens": 188,
+        "completion_tokens": 1,
+        "total_tokens": 189
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 1.086,
+        "prompt_tokens": 188,
+        "completion_tokens": 1,
+        "total_tokens": 189
+      }
+    },
+    {
+      "success": true,
+      "name": "Dog",
+      "type": "class",
+      "code": "class Dog(Animal):\n    def __init__(self, name):\n        super().__init__(name)",
+      "comment": "",
+      "model": "deepseek-coder:6.7b",
+      "language": "python",
+      "prompt": {
+        "code": "class Dog(Animal):\n    def __init__(self, name):\n        super().__init__(name)",
+        "language": "python",
+        "comment_type": "class",
+        "temperature": 0.4,
+        "max_tokens": 600
+      },
+      "raw_response": "{\"comment\":\"\",\"model\":\"deepseek-coder:6.7b\",\"language\":\"python\",\"comment_type\":\"class\",\"metadata\":{\"temperature\":0.4,\"max_tokens\":600,\"top_p\":0.9,\"latency\":1.098,\"prompt_tokens\":192,\"completion_tokens\":1,\"total_tokens\":193}}",
+      "latency": 1.098,
+      "tokens": {
+        "prompt_tokens": 192,
+        "completion_tokens": 1,
+        "total_tokens": 193
+      },
+      "metadata": {
+        "temperature": 0.4,
+        "max_tokens": 600,
+        "top_p": 0.9,
+        "latency": 1.098,
+        "prompt_tokens": 192,
+        "completion_tokens": 1,
+        "total_tokens": 193
+      }
+    }
+  ]
+}
