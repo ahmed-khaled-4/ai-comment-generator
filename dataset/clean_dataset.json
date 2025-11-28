@@ -1,0 +1,702 @@
+[
+    {
+        "language": "python",
+        "human_comment": "Distributes an archive to a web server.\n    Args:\n        archive_path (str): The path of the archive to distribute.\n    Returns:\n        If the file doesn't exist at archive_path or an error occurs - False.\n        Otherwise - True.",
+        "code": "def do_deploy(archive_path):\n    \"\"\"Distributes an archive to a web server.\n    Args:\n        archive_path (str): The path of the archive to distribute.\n    Returns:\n        If the file doesn't exist at archive_path or an error occurs - False.\n        Otherwise - True.\n    \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/AshrafRabieHulagu/AirBnB_clone_v2"
+    },
+    {
+        "language": "python",
+        "human_comment": "Initializes the EnhancedTradingBot with configurations and exchange setup.\n\n        Args:\n            symbol (str): Trading symbol (e.g., 'BTC/USDT').\n            config_file (str): Path to the configuration YAML file.",
+        "code": "def __init__(self, symbol, config_file=\"config.yaml\"):\n        \"\"\"\n        Initializes the EnhancedTradingBot with configurations and exchange setup.\n\n        Args:\n            symbol (str): Trading symbol (e.g., 'BTC/USDT').\n            config_file (str): Path to the configuration YAML file.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/Mentallyspammed1/BybitBot"
+    },
+    {
+        "language": "python",
+        "human_comment": "Write a transcript to a file in SRT format.",
+        "code": "def write_srt(transcript, file):\n    \"\"\"\n    Write a transcript to a file in SRT format.\n\n    \"\"\"",
+        "license": "bsd-2-clause",
+        "source_repo": "https://github.com/gprithvi369/diarisation-fastwhisper-NeMo-"
+    },
+    {
+        "language": "python",
+        "human_comment": "Process the language argument to make sure it's valid and convert language names to language codes.",
+        "code": "def process_language_arg(language: str, model_name: str):\n    \"\"\"\n    Process the language argument to make sure it's valid and convert language names to language codes.\n    \"\"\"",
+        "license": "bsd-2-clause",
+        "source_repo": "https://github.com/gprithvi369/diarisation-fastwhisper-NeMo-"
+    },
+    {
+        "language": "python",
+        "human_comment": "Create a dictionary of Cinder standard capabilities.\n\n        This method creates a dictionary of Cinder standard capabilities\n        and returns the created dictionary.\n        The keys of this dictionary don't contain prefix and separator(:).",
+        "code": "def _init_standard_capabilities(self):\n        \"\"\"Create a dictionary of Cinder standard capabilities.\n\n        This method creates a dictionary of Cinder standard capabilities\n        and returns the created dictionary.\n        The keys of this dictionary don't contain prefix and separator(:).\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Fetch image from image_service and write to unencrypted volume.\n\n        This does not attach an encryptor layer when connecting to the volume.",
+        "code": "def copy_image_to_volume(self, context, volume, image_service, image_id,\n                             disable_sparse=False):\n        \"\"\"Fetch image from image_service and write to unencrypted volume.\n\n        This does not attach an encryptor layer when connecting to the volume.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Fetch image from image_service and write to encrypted volume.\n\n        This attaches the encryptor layer when connecting to the volume.",
+        "code": "def copy_image_to_encrypted_volume(\n            self, context, volume, image_service, image_id,\n            disable_sparse=False):\n        \"\"\"Fetch image from image_service and write to encrypted volume.\n\n        This attaches the encryptor layer when connecting to the volume.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Fetch the image from image_service and write it to the volume.",
+        "code": "def _copy_image_data_to_volume(self, context, volume, image_service,\n                                   image_id, encrypted=False,\n                                   disable_sparse=False):\n        \"\"\"Fetch the image from image_service and write it to the volume.\"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get filter_function string.\n\n        Returns either the string from the driver instance or global section\n        in cinder.conf. If nothing is specified in cinder.conf, then try to\n        find the default filter_function. When None is returned the scheduler\n        will always pass the driver instance.\n\n        :returns: a filter_function string or None",
+        "code": "def get_filter_function(self):\n        \"\"\"Get filter_function string.\n\n        Returns either the string from the driver instance or global section\n        in cinder.conf. If nothing is specified in cinder.conf, then try to\n        find the default filter_function. When None is returned the scheduler\n        will always pass the driver instance.\n\n        :returns: a filter_function string or None\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get good_function string.\n\n        Returns either the string from the driver instance or global section\n        in cinder.conf. If nothing is specified in cinder.conf, then try to\n        find the default goodness_function. When None is returned the scheduler\n        will give the lowest score to the driver instance.\n\n        :returns: a goodness_function string or None",
+        "code": "def get_goodness_function(self):\n        \"\"\"Get good_function string.\n\n        Returns either the string from the driver instance or global section\n        in cinder.conf. If nothing is specified in cinder.conf, then try to\n        find the default goodness_function. When None is returned the scheduler\n        will give the lowest score to the driver instance.\n\n        :returns: a goodness_function string or None\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get the default filter_function string.\n\n        Each driver could overwrite the method to return a well-known\n        default string if it is available.\n\n        :returns: None",
+        "code": "def get_default_filter_function(self):\n        \"\"\"Get the default filter_function string.\n\n        Each driver could overwrite the method to return a well-known\n        default string if it is available.\n\n        :returns: None\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get the default goodness_function string.\n\n        Each driver could overwrite the method to return a well-known\n        default string if it is available.\n\n        :returns: None",
+        "code": "def get_default_goodness_function(self):\n        \"\"\"Get the default goodness_function string.\n\n        Each driver could overwrite the method to return a well-known\n        default string if it is available.\n\n        :returns: None\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get the configured setting for backup from snapshot.\n\n        If an inheriting driver does not support this operation,\n        the driver should override this method to return false\n        and log a warning letting the administrator know they\n        have configured something that cannot be done.",
+        "code": "def backup_use_temp_snapshot(self):\n        \"\"\"Get the configured setting for backup from snapshot.\n\n        If an inheriting driver does not support this operation,\n        the driver should override this method to return false\n        and log a warning letting the administrator know they\n        have configured something that cannot be done.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get a backup device from an existing volume.\n\n        The function returns a volume or snapshot to backup service,\n        and then backup service attaches the device and does backup.",
+        "code": "def get_backup_device(self, context, backup):\n        \"\"\"Get a backup device from an existing volume.\n\n        The function returns a volume or snapshot to backup service,\n        and then backup service attaches the device and does backup.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return a volume to do backup.\n\n        To backup a snapshot, create a temp volume from the snapshot and\n        back it up.\n\n        Otherwise to backup an in-use volume, create a temp volume and\n        back it up.",
+        "code": "def _get_backup_volume_temp_volume(self, context, backup):\n        \"\"\"Return a volume to do backup.\n\n        To backup a snapshot, create a temp volume from the snapshot and\n        back it up.\n\n        Otherwise to backup an in-use volume, create a temp volume and\n        back it up.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return a device to backup.\n\n        If it is to backup from snapshot, back it up directly.\n\n        Otherwise for in-use volume, create a temp snapshot and back it up.",
+        "code": "def _get_backup_volume_temp_snapshot(self, context, backup):\n        \"\"\"Return a device to backup.\n\n        If it is to backup from snapshot, back it up directly.\n\n        Otherwise for in-use volume, create a temp snapshot and back it up.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return model update for migrated volume.\n\n        Refer to\n        :obj:`cinder.interface.volume_driver.VolumeDriverCore.update_migrated_volume`\n        for additional information.",
+        "code": "def update_migrated_volume(self, ctxt, volume, new_volume,\n                               original_volume_status):\n        \"\"\"Return model update for migrated volume.\n\n        Refer to\n        :obj:`cinder.interface.volume_driver.VolumeDriverCore.update_migrated_volume`\n        for additional information.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Exports the volume.\n\n        Can optionally return a Dictionary of changes\n        to the volume object to be persisted.",
+        "code": "def create_export(self, context, volume, connector):\n        \"\"\"Exports the volume.\n\n        Can optionally return a Dictionary of changes\n        to the volume object to be persisted.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Exports the snapshot.\n\n        Can optionally return a Dictionary of changes\n        to the snapshot object to be persisted.",
+        "code": "def create_export_snapshot(self, context, snapshot, connector):\n        \"\"\"Exports the snapshot.\n\n        Can optionally return a Dictionary of changes\n        to the snapshot object to be persisted.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return pool name where volume reside on.\n\n        :param volume: The volume hosted by the driver.\n        :returns: name of the pool where given volume is in.",
+        "code": "def get_pool(self, volume):\n        \"\"\"Return pool name where volume reside on.\n\n        :param volume: The volume hosted by the driver.\n        :returns: name of the pool where given volume is in.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get provider info updates from driver.\n\n        :param volumes: List of Cinder volumes to check for updates\n        :param snapshots: List of Cinder snapshots to check for updates\n        :returns: tuple (volume_updates, snapshot_updates)\n\n        where volume updates {'id': uuid, provider_id: <provider-id>}\n        and snapshot updates {'id': uuid, provider_id: <provider-id>}",
+        "code": "def update_provider_info(self, volumes, snapshots):\n        \"\"\"Get provider info updates from driver.\n\n        :param volumes: List of Cinder volumes to check for updates\n        :param snapshots: List of Cinder snapshots to check for updates\n        :returns: tuple (volume_updates, snapshot_updates)\n\n        where volume updates {'id': uuid, provider_id: <provider-id>}\n        and snapshot updates {'id': uuid, provider_id: <provider-id>}\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Enables replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates",
+        "code": "def enable_replication(self, context, group, volumes):\n        \"\"\"Enables replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Disables replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates",
+        "code": "def disable_replication(self, context, group, volumes):\n        \"\"\"Disables replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Fails over replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :param secondary_backend_id: backend_id of the secondary site\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates",
+        "code": "def failover_replication(self, context, group, volumes,\n                             secondary_backend_id=None):\n        \"\"\"Fails over replication for a group and volumes in the group.\n\n        :param group: group object\n        :param volumes: list of volume objects in the group\n        :param secondary_backend_id: backend_id of the secondary site\n        :returns: model_update - dict of group updates\n        :returns: volume_model_updates - list of dicts of volume updates\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Check if driver class supports replication features.\n\n        Feature is a string that must be one of:\n            - v2.1\n            - a/a",
+        "code": "def supports_replication_feature(cls, feature):\n        \"\"\"Check if driver class supports replication features.\n\n        Feature is a string that must be one of:\n            - v2.1\n            - a/a\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Creates a volume from a backup.\n\n        Can optionally return a Dictionary of changes to the volume object to\n        be persisted.\n\n        :param volume: the volume object to be created.\n        :param backup: the backup object as source.\n        :returns: volume_model_update",
+        "code": "def create_volume_from_backup(self, volume, backup):\n        \"\"\"Creates a volume from a backup.\n\n        Can optionally return a Dictionary of changes to the volume object to\n        be persisted.\n\n        :param volume: the volume object to be created.\n        :param backup: the backup object as source.\n        :returns: volume_model_update\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return size of volume to be managed by manage_existing.\n\n        When calculating the size, round up to the next GB.\n\n        :param volume:       Cinder volume to manage\n        :param existing_ref: Driver-specific information used to identify a\n                             volume\n        :returns size:       Volume size in GiB (integer)",
+        "code": "def manage_existing_get_size(self, volume, existing_ref):\n        \"\"\"Return size of volume to be managed by manage_existing.\n\n        When calculating the size, round up to the next GB.\n\n        :param volume:       Cinder volume to manage\n        :param existing_ref: Driver-specific information used to identify a\n                             volume\n        :returns size:       Volume size in GiB (integer)\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return size of snapshot to be managed by manage_existing.\n\n        When calculating the size, round up to the next GB.\n\n        :param snapshot:     Cinder volume snapshot to manage\n        :param existing_ref: Driver-specific information used to identify a\n                             volume snapshot\n        :returns size:       Volume snapshot size in GiB (integer)",
+        "code": "def manage_existing_snapshot_get_size(self, snapshot, existing_ref):\n        \"\"\"Return size of snapshot to be managed by manage_existing.\n\n        When calculating the size, round up to the next GB.\n\n        :param snapshot:     Cinder volume snapshot to manage\n        :param existing_ref: Driver-specific information used to identify a\n                             volume snapshot\n        :returns size:       Volume snapshot size in GiB (integer)\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Revert volume to snapshot.\n\n        Note: the revert process should not change the volume's\n        current size, that means if the driver shrank\n        the volume during the process, it should extend the\n        volume internally.",
+        "code": "def revert_to_snapshot(self, context, volume, snapshot):\n        \"\"\"Revert volume to snapshot.\n\n        Note: the revert process should not change the volume's\n        current size, that means if the driver shrank\n        the volume during the process, it should extend the\n        volume internally.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns the actual driver object.\n\n        Can be overloaded by the proxy.",
+        "code": "def _get_driver(self):\n        \"\"\"Returns the actual driver object.\n\n        Can be overloaded by the proxy.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Fail if connector doesn't contain all the data needed by driver.\n\n        Do a check on the connector and ensure that it has wwnns, wwpns.",
+        "code": "def validate_connector(self, connector):\n        \"\"\"Fail if connector doesn't contain all the data needed by driver.\n\n        Do a check on the connector and ensure that it has wwnns, wwpns.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/openstack/cinder"
+    },
+    {
+        "language": "python",
+        "human_comment": "Generate a pakrat.yumbase.YumBase object on-the-fly.\n\n    This makes it possible to mirror YUM repositories without having any stored\n    configuration anywhere. Simply pass in the name of the repository, and\n    either one or more baseurl's or a mirrorlist URL, and you will get an\n    object in return that you can pass to a mirroring function.",
+        "code": "def factory(name, baseurls=None, mirrorlist=None):\n    \"\"\" Generate a pakrat.yumbase.YumBase object on-the-fly.\n\n    This makes it possible to mirror YUM repositories without having any stored\n    configuration anywhere. Simply pass in the name of the repository, and\n    either one or more baseurl's or a mirrorlist URL, and you will get an\n    object in return that you can pass to a mirroring function.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/ryanuber/pakrat"
+    },
+    {
+        "language": "python",
+        "human_comment": "Retrieve group comps XML data from a remote repository.\n\n    This data can be used while running createrepo to provide package groups\n    data that clients can use while installing software.",
+        "code": "def retrieve_group_comps(repo):\n    \"\"\" Retrieve group comps XML data from a remote repository.\n\n    This data can be used while running createrepo to provide package groups\n    data that clients can use while installing software.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/ryanuber/pakrat"
+    },
+    {
+        "language": "python",
+        "human_comment": "Sync repository contents from a remote source.\n\n    Accepts a repository, destination path, and an optional version, and uses\n    the YUM client library to download all available packages from the mirror.\n    If the delete flag is passed, any packages found on the local filesystem\n    which are not present in the remote repository will be deleted.",
+        "code": "def sync(repo, dest, version, delete=False, combined=False, yumcallback=None,\n         repocallback=None):\n    \"\"\" Sync repository contents from a remote source.\n\n    Accepts a repository, destination path, and an optional version, and uses\n    the YUM client library to download all available packages from the mirror.\n    If the delete flag is passed, any packages found on the local filesystem\n    which are not present in the remote repository will be deleted.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/ryanuber/pakrat"
+    },
+    {
+        "language": "python",
+        "human_comment": "Abstracts calling class callbacks.\n\n    Since callbacks are optional, a function should check if the callback is\n    set or not, and then call it, so we don't repeat this code many times.",
+        "code": "def callback(callback_obj, repo, event, data=None):\n    \"\"\" Abstracts calling class callbacks.\n\n    Since callbacks are optional, a function should check if the callback is\n    set or not, and then call it, so we don't repeat this code many times.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/ryanuber/pakrat"
+    },
+    {
+        "language": "python",
+        "human_comment": ":param message: A message informing the user that document tags are still being processed.\n        :type message: str",
+        "code": "def __init__(self, message: str, **kwargs):\n        \"\"\"\n        :param message: A message informing the user that document tags are still being processed.\n        :type message: str\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/box/box-python-sdk"
+    },
+    {
+        "language": "python",
+        "human_comment": "Calculates the rotation matrices for a batch of rotation vectors\n    referenced from https://github.com/mkocabas/VIBE/blob/master/lib/utils/geometry.py\n    :param rot_vecs (*, 3) axis-angle vectors\n    :returns rot_mats (*, 3, 3)",
+        "code": "def rodrigues_vec_to_matrix(rot_vecs, dtype=torch.float32):\n    \"\"\"\n    Calculates the rotation matrices for a batch of rotation vectors\n    referenced from https://github.com/mkocabas/VIBE/blob/master/lib/utils/geometry.py\n    :param rot_vecs (*, 3) axis-angle vectors\n    :returns rot_mats (*, 3, 3)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "Convert rotation matrix to Rodrigues vector",
+        "code": "def matrix_to_axis_angle(matrix):\n    \"\"\"\n    Convert rotation matrix to Rodrigues vector\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": ":param rot_vec (*, 3)\n    :returns 6d vector (*, 6)",
+        "code": "def axis_angle_to_cont_6d(rot_vec):\n    \"\"\"\n    :param rot_vec (*, 3)\n    :returns 6d vector (*, 6)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": ":param matrix (*, 3, 3)\n    :returns 6d vector (*, 6)",
+        "code": "def matrix_to_cont_6d(matrix):\n    \"\"\"\n    :param matrix (*, 3, 3)\n    :returns 6d vector (*, 6)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": ":param 6d vector (*, 6)\n    :returns matrix (*, 3, 3)",
+        "code": "def cont_6d_to_matrix(cont_6d):\n    \"\"\"\n    :param 6d vector (*, 6)\n    :returns matrix (*, 3, 3)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "This function is borrowed from https://github.com/kornia/kornia\n\n    Convert quaternion vector to angle axis of rotation.\n    Adapted from ceres C++ library: ceres-solver/include/ceres/rotation.h\n\n    :param quaternion (*, 4) expects WXYZ\n    :returns axis_angle (*, 3)",
+        "code": "def quaternion_to_axis_angle(quaternion, eps=1e-5):\n    \"\"\"\n    This function is borrowed from https://github.com/kornia/kornia\n\n    Convert quaternion vector to angle axis of rotation.\n    Adapted from ceres C++ library: ceres-solver/include/ceres/rotation.h\n\n    :param quaternion (*, 4) expects WXYZ\n    :returns axis_angle (*, 3)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "Convert a quaternion to a rotation matrix.\n    Taken from https://github.com/kornia/kornia, based on\n    https://github.com/matthew-brett/transforms3d/blob/8965c48401d9e8e66b6a8c37c65f2fc200a076fa/transforms3d/quaternions.py#L101\n    https://github.com/tensorflow/graphics/blob/master/tensorflow_graphics/geometry/transformation/rotation_matrix_3d.py#L247\n    :param quaternion (N, 4) expects WXYZ order\n    returns rotation matrix (N, 3, 3)",
+        "code": "def quaternion_to_matrix(quaternion):\n    \"\"\"\n    Convert a quaternion to a rotation matrix.\n    Taken from https://github.com/kornia/kornia, based on\n    https://github.com/matthew-brett/transforms3d/blob/8965c48401d9e8e66b6a8c37c65f2fc200a076fa/transforms3d/quaternions.py#L101\n    https://github.com/tensorflow/graphics/blob/master/tensorflow_graphics/geometry/transformation/rotation_matrix_3d.py#L247\n    :param quaternion (N, 4) expects WXYZ order\n    returns rotation matrix (N, 3, 3)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "This function is borrowed from https://github.com/kornia/kornia\n    Convert angle axis to quaternion in WXYZ order\n    :param axis_angle (*, 3)\n    :returns quaternion (*, 4) WXYZ order",
+        "code": "def axis_angle_to_quaternion(axis_angle, eps=1e-5):\n    \"\"\"\n    This function is borrowed from https://github.com/kornia/kornia\n    Convert angle axis to quaternion in WXYZ order\n    :param axis_angle (*, 3)\n    :returns quaternion (*, 4) WXYZ order\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "This function is borrowed from https://github.com/kornia/kornia\n    Convert rotation matrix to 4d quaternion vector\n    This algorithm is based on algorithm described in\n    https://github.com/KieranWynn/pyquaternion/blob/master/pyquaternion/quaternion.py#L201\n\n    :param matrix (N, 3, 3)",
+        "code": "def matrix_to_quaternion(matrix, eps=1e-6):\n    \"\"\"\n    This function is borrowed from https://github.com/kornia/kornia\n    Convert rotation matrix to 4d quaternion vector\n    This algorithm is based on algorithm described in\n    https://github.com/KieranWynn/pyquaternion/blob/master/pyquaternion/quaternion.py#L201\n\n    :param matrix (N, 3, 3)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/brentyi/egoallo"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gets the description of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The description of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str",
+        "code": "def description(self):\n        \"\"\"Gets the description of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The description of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/volcengine/volcengine-python-sdk"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gets the security_group_id of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The security_group_id of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str",
+        "code": "def security_group_id(self):\n        \"\"\"Gets the security_group_id of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The security_group_id of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/volcengine/volcengine-python-sdk"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gets the security_group_name of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The security_group_name of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str",
+        "code": "def security_group_name(self):\n        \"\"\"Gets the security_group_name of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n\n\n        :return: The security_group_name of this ModifySecurityGroupAttributesRequest.  # noqa: E501\n        :rtype: str\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/volcengine/volcengine-python-sdk"
+    },
+    {
+        "language": "python",
+        "human_comment": "Batches a tf.data.Dataset and adds padding if len(dataset) is not divisible by the batch size.\n\n  Args:\n    dataset: tf.data.Dataset\n    batch_size: batch size of resulting batched dataset\n    padded_shapes: shapes of the padded batches\n    padding_id: value for padding, for elements in new batch\n\n  Returns:",
+        "code": "def batch_with_padding(\n    dataset: tf.data.Dataset,\n    batch_size,\n    padded_shapes=None,\n    padding_id=PAD_ID,\n):\n  \"\"\"Batches a tf.data.Dataset and adds padding if len(dataset) is not divisible by the batch size.\n\n  Args:\n    dataset: tf.data.Dataset\n    batch_size: batch size of resulting batched dataset\n    padded_shapes: shapes of the padded batches\n    padding_id: value for padding, for elements in new batch\n\n  Returns:\n  \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/google/init2winit"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gathers final state from data['state'], then pads to max_state_dim.\n        Return (state, state_mask, n_state_tokens).",
+        "code": "def _prepare_state(self, data: dict):\n        \"\"\"\n        Gathers final state from data['state'], then pads to max_state_dim.\n        Return (state, state_mask, n_state_tokens).\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/InternRobotics/InternManip"
+    },
+    {
+        "language": "python",
+        "human_comment": "Pad to max_action_dim, return masks.",
+        "code": "def _prepare_action(self, data: dict):\n        \"\"\"\n        Pad to max_action_dim, return masks.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/InternRobotics/InternManip"
+    },
+    {
+        "language": "python",
+        "human_comment": "Concurrently fit models (from a list of kernels) on the same data in as many processes as there are available processor cores using `multiprocessing`'s `Pool`\n    (this function does NOT use GPy's own `parallel` argument, which parallelises within single fits rather than across multiple ones)\n\n    NOTE: Any code calling this function (however many nested levels in) should be within an \"if __name__ == '__main__':\" preamble for full OS-agnostic use.",
+        "code": "def fit_mods_parallel_processes(X, Y, k_exprs, restarts = 5, optimiser = GPy_optimisers[0], max_retries = 1):\n    '''Concurrently fit models (from a list of kernels) on the same data in as many processes as there are available processor cores using `multiprocessing`'s `Pool`\n    (this function does NOT use GPy's own `parallel` argument, which parallelises within single fits rather than across multiple ones)\n\n    NOTE: Any code calling this function (however many nested levels in) should be within an \"if __name__ == '__main__':\" preamble for full OS-agnostic use.\n    '''",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/T-Flet/GPy-ABCD"
+    },
+    {
+        "language": "python",
+        "human_comment": "connect to wifi access point\n    :param: networks: dict of \"ssid\": \"password\"\n    :param: timeout: a timeout, how long to wait for association\n    :return:",
+        "code": "def connect(networks: dict, timeout: int = 10, retries: int = 5):\n    \"\"\"\n    connect to wifi access point\n    :param: networks: dict of \"ssid\": \"password\"\n    :param: timeout: a timeout, how long to wait for association\n    :return:\n    \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/ubirch/ubirch-elevate-application"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gets the id of this OperationSortResultsScore.\n\n\n        :return: The id of this OperationSortResultsScore.\n        :rtype: str",
+        "code": "def id(self):\n        \"\"\"Gets the id of this OperationSortResultsScore.\n\n\n        :return: The id of this OperationSortResultsScore.\n        :rtype: str\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/RTXteam/RTX"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gets the parameters of this OperationSortResultsScore.\n\n\n        :return: The parameters of this OperationSortResultsScore.\n        :rtype: OperationSortResultsScoreParameters",
+        "code": "def parameters(self):\n        \"\"\"Gets the parameters of this OperationSortResultsScore.\n\n\n        :return: The parameters of this OperationSortResultsScore.\n        :rtype: OperationSortResultsScoreParameters\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/RTXteam/RTX"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns list of modified rows if no errors were found, otherwise\n        empty list.",
+        "code": "def get_modified_rows(self):\n        \"\"\"Returns list of modified rows if no errors were found, otherwise\n        empty list.\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns list representing hierarchy in the row.\n        \n        Arguments:\n        row -- data row",
+        "code": "def get_hierarchy(self, row):\n        \"\"\"Returns list representing hierarchy in the row.\n        \n        Arguments:\n        row -- data row\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns rows list of hierarchy rows that should be put inside\n        data to show new_hierarchy. If hierarchy rows have been added for\n        new_hierarchy already, empty list will be returned. Hierarchy rows\n        will be have not empty: id(if created), type, name and summable fields.\n        \n        Arguments:\n        new_hierarchy -- list representing hierarchy in row in data \n        row_len -- length of that row, needed create correct hierarchy row",
+        "code": "def create_hierarchy_rows(self, new_hierarchy, row_len):\n        \"\"\"Returns rows list of hierarchy rows that should be put inside\n        data to show new_hierarchy. If hierarchy rows have been added for\n        new_hierarchy already, empty list will be returned. Hierarchy rows\n        will be have not empty: id(if created), type, name and summable fields.\n        \n        Arguments:\n        new_hierarchy -- list representing hierarchy in row in data \n        row_len -- length of that row, needed create correct hierarchy row\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns HierarchyNode representing hierarchy. If there was not\n        created node representing this hierarchy, None is returned.\n        \n        Arguments:\n        hierarchy - hierarchy list",
+        "code": "def get_hierarchy_node(self, hierarchy):\n        \"\"\"Returns HierarchyNode representing hierarchy. If there was not\n        created node representing this hierarchy, None is returned.\n        \n        Arguments:\n        hierarchy - hierarchy list\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns id for row with specified hierarchy. If there is no node\n        representing such a hierarchy, HierarchyError is thrown.\n        \n        Arguments:\n        hierarchy -- hierarchy list",
+        "code": "def get_full_id(self, hierarchy):\n        \"\"\"Returns id for row with specified hierarchy. If there is no node\n        representing such a hierarchy, HierarchyError is thrown.\n        \n        Arguments:\n        hierarchy -- hierarchy list \n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns id of parent of row with given id. If this row has\n        no parent, None is returned.\n        \n        Parameters:\n        id -- id of child",
+        "code": "def get_parent_id(self, id):\n        \"\"\"Returns id of parent of row with given id. If this row has\n        no parent, None is returned.\n        \n        Parameters:\n        id -- id of child\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns child node with given id. If there is no node with this\n        id, None is returned.\n        \n        Arguments:\n        key -- id connected with child node",
+        "code": "def get_child(self, key):\n        \"\"\"Returns child node with given id. If there is no node with this\n        id, None is returned.\n        \n        Arguments:\n        key -- id connected with child node\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns True, if there is node connected with value key,\n        otherwise False.\n        \n        Arguments:\n        key -- id connected with child node",
+        "code": "def has_child(self, key):\n        \"\"\"Returns True, if there is node connected with value key,\n        otherwise False.\n        \n        Arguments:\n        key -- id connected with child node\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns dict representing teritorial unit which code is\n        woj_code[ + pow_code[ + gm_code]]. If such a unit cannot be found,\n        None is returned.\n        \n        Arguments:\n        woj_code -- code of unit's wojewodztwo\n        pow_code -- code of unit's powiat\n        gm_code -- code of unit's gmina",
+        "code": "def get_teryt_object(self, woj_code, pow_code=None, gm_code=None):\n        \"\"\"Returns dict representing teritorial unit which code is\n        woj_code[ + pow_code[ + gm_code]]. If such a unit cannot be found,\n        None is returned.\n        \n        Arguments:\n        woj_code -- code of unit's wojewodztwo\n        pow_code -- code of unit's powiat\n        gm_code -- code of unit's gmina\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns name of teritorial unit which code is\n        woj_code[ + pow_code[ + gm_code]]. If such a unit cannot be found,\n        None is returned.\n        \n        Arguments:\n        code -- unit's TERYT code",
+        "code": "def get_teryt_name(self, code):\n        \"\"\"Returns name of teritorial unit which code is\n        woj_code[ + pow_code[ + gm_code]]. If such a unit cannot be found,\n        None is returned.\n        \n        Arguments:\n        code -- unit's TERYT code\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns teryt id of teritorial unit represented by hierarchy.\n        Letters in hierarchy strings are lowercased and changed so that\n        they could be in the same form as they are expected.\n        If such a unit can not be found, returns None.\n        \n        Arguments:\n        hierarchy -- list containing name of unit's wojewodztwo,\n                     powiat(optionally) and gmina(optionally)",
+        "code": "def get_teryt_id(self, hierarchy):\n        \"\"\"Returns teryt id of teritorial unit represented by hierarchy.\n        Letters in hierarchy strings are lowercased and changed so that\n        they could be in the same form as they are expected.\n        If such a unit can not be found, returns None.\n        \n        Arguments:\n        hierarchy -- list containing name of unit's wojewodztwo,\n                     powiat(optionally) and gmina(optionally)\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns highest id of objects in list.\n        \n        Argument:\n        objects -- list of objects that have id value",
+        "code": "def find_highest_id(self, objects):\n        \"\"\"Returns highest id of objects in list.\n        \n        Argument:\n        objects -- list of objects that have id value\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns only powiat's name, without 'powiat' part, 'm. st.'\n        \n        Arguments:\n        full_name -- full name of powiat",
+        "code": "def correct_powiat_name(self, full_name):\n        \"\"\"Returns only powiat's name, without 'powiat' part, 'm. st.'\n        \n        Arguments:\n        full_name -- full name of powiat\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Returns only gmina's name, without 'm.' part.\n        \n        Arguments:\n        full_name -- full name of gmina",
+        "code": "def correct_gmina_name(self, full_name):\n        \"\"\"Returns only gmina's name, without 'm.' part.\n        \n        Arguments:\n        full_name -- full name of gmina\n        \"\"\"",
+        "license": "bsd-3-clause",
+        "source_repo": "https://github.com/CCLab/Raw-Salad"
+    },
+    {
+        "language": "python",
+        "human_comment": "Update the iteration count and calculate alpha for alpha decay.",
+        "code": "def step(self):\n        \"\"\"\n        Update the iteration count and calculate alpha for alpha decay.\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/recursingfeynman/sennet-segmentation"
+    },
+    {
+        "language": "python",
+        "human_comment": "Sample the number of objects to place on this particular furniture unit.\n        :return: Number of objects.",
+        "code": "def sample_object_count(self):\n        \"\"\"\n        Sample the number of objects to place on this particular furniture unit.\n        :return: Number of objects.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Choose a workspace to place the objects on. Sampling is weighted based on the workspace area, so that it is\n            more likely to place objects on large workspaces than small ones.\n        :return: Index of the chosen workspace.",
+        "code": "def choose_workspace(self):\n        \"\"\"\n        Choose a workspace to place the objects on. Sampling is weighted based on the workspace area, so that it is\n            more likely to place objects on large workspaces than small ones.\n        :return: Index of the chosen workspace.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Perform uniform rejection sampling to uniformly sample points within the hull.\n        :param hull: Workspace hull.\n        :param hull_path: Path of the hull border, used to check if a point lies within the hull.\n        :return: x, y position of the sampled point.",
+        "code": "def uniform_rejection_sampling(self, hull, hull_path):\n        \"\"\"\n        Perform uniform rejection sampling to uniformly sample points within the hull.\n        :param hull: Workspace hull.\n        :param hull_path: Path of the hull border, used to check if a point lies within the hull.\n        :return: x, y position of the sampled point.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Sample an object position in the object workspaces.\n        :return: x, y, z of object pose.",
+        "code": "def sample_among_workspace(self):\n        \"\"\"\n        Sample an object position in the object workspaces.\n        :return: x, y, z of object pose.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Load an ObjectWorkspace object from a .pkl file.\n        :param filename: Path to the .pkl file to load the ObjectWorkspace from.",
+        "code": "def load(cls, filename):\n        \"\"\"\n        Load an ObjectWorkspace object from a .pkl file.\n        :param filename: Path to the .pkl file to load the ObjectWorkspace from.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Sample the number of images to render for this particular furniture unit.\n        :return: Number of images.",
+        "code": "def get_camera_samples(self):\n        \"\"\"\n        Sample the number of images to render for this particular furniture unit.\n        :return: Number of images.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Calculate volume of the furniture mesh, used for sampling the number of images.\n        :return: Mesh volume",
+        "code": "def mesh_volume(self):\n        \"\"\"\n        Calculate volume of the furniture mesh, used for sampling the number of images.\n        :return: Mesh volume\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Sample a full pose of the camera with a camera origin and a look-to-point.\n        :return: Camera origin, look-to-point",
+        "code": "def sample_camera_points(self):\n        \"\"\"\n        Sample a full pose of the camera with a camera origin and a look-to-point.\n        :return: Camera origin, look-to-point\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Uniformly samples a 3D pose from a pixelised 2D region and a height range.\n        :param region: Pixelised grid to sample from, with 1's indicating region and 0's indicating no-region pixels.\n        :param height: Minimum and maximum height to sample from\n        :return: 3D coordinates (x, y, z)",
+        "code": "def sample_from_pixel_grid(self, region, height):\n        \"\"\"\n        Uniformly samples a 3D pose from a pixelised 2D region and a height range.\n        :param region: Pixelised grid to sample from, with 1's indicating region and 0's indicating no-region pixels.\n        :param height: Minimum and maximum height to sample from\n        :return: 3D coordinates (x, y, z)\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Load an CameraSampleSpace object from a .pkl file.\n        :param filename: Path to the .pkl file to load the CameraSampleSpace from.",
+        "code": "def load(cls, filename):\n        \"\"\"\n        Load an CameraSampleSpace object from a .pkl file.\n        :param filename: Path to the .pkl file to load the CameraSampleSpace from.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "From the segmask image from a parallel projection, check if the object is balancing over the edge of the workspace.\n    :param segmask: Parallel projection segmask image.\n    :param body_uid: Physics simulation UID of the body.\n    :return: True if object is balancing over workspace, False otherwise.",
+        "code": "def is_object_in_air(segmask, body_uid):\n    \"\"\"\n    From the segmask image from a parallel projection, check if the object is balancing over the edge of the workspace.\n    :param segmask: Parallel projection segmask image.\n    :param body_uid: Physics simulation UID of the body.\n    :return: True if object is balancing over workspace, False otherwise.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Gather all tensor identifiers in the dataset.\n    :param root_dir: Path to the dataset.\n    :return: Numpy array of all points in the dataset.",
+        "code": "def get_tensor_list(root_dir):\n    \"\"\"\n    Gather all tensor identifiers in the dataset.\n    :param root_dir: Path to the dataset.\n    :return: Numpy array of all points in the dataset.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Enocde a depth image into a jet-colourscale RGB image\n    :param image: depth image\n    :param vmin: minimum visible depth in RGB image\n    :param vmax: maximum visible depth in RGB image\n    :return: RGB image",
+        "code": "def depth_encoding(image, vmin=0.2, vmax=2.0):\n    \"\"\"\n    Enocde a depth image into a jet-colourscale RGB image\n    :param image: depth image\n    :param vmin: minimum visible depth in RGB image\n    :param vmax: maximum visible depth in RGB image\n    :return: RGB image\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/AuCoRoboticsMU/GraDE"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return result from the masks request",
+        "code": "def get(self, df: DataFrame, *mask):\n\t\t\"\"\"\n\t\tReturn result from the masks request\n\t\t\"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/Plouffi/App-Reviews-Analyser"
+    },
+    {
+        "language": "python",
+        "human_comment": "Initialize the knowledge indexer.\n        \n        Args:\n            knowledge_base_dir: Directory containing knowledge base JSON files\n            db_directory: Directory to store the vector database",
+        "code": "def __init__(self, knowledge_base_dir: str, db_directory: str):\n        \"\"\"\n        Initialize the knowledge indexer.\n        \n        Args:\n            knowledge_base_dir: Directory containing knowledge base JSON files\n            db_directory: Directory to store the vector database\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/Rajarshi012003/CodeWhiz.AI"
+    },
+    {
+        "language": "python",
+        "human_comment": "Get device information by UUID.\n    \n    **Authentication**: Requires valid API key (ADMIN ONLY)\n    \n    **Path Parameters**:\n    - `device_uuid`: Device UUID\n    \n    **Returns**: Device information",
+        "code": "def get_device_endpoint(device_uuid: str):\n    \"\"\"\n    Get device information by UUID.\n    \n    **Authentication**: Requires valid API key (ADMIN ONLY)\n    \n    **Path Parameters**:\n    - `device_uuid`: Device UUID\n    \n    **Returns**: Device information\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/shreyashguptas/javia"
+    },
+    {
+        "language": "python",
+        "human_comment": "_Parse commandline arguments to the Uploader_\n       \n       Args:\n            none\n        Returns:\n            _dict_: A dict object with two parameters, 'data' and 'yml',\n                    indicating the location of the data files to be used,\n                    and the yaml document used for validation.",
+        "code": "def parse_arguments():\n    \"\"\"_Parse commandline arguments to the Uploader_\n       \n       Args:\n            none\n        Returns:\n            _dict_: A dict object with two parameters, 'data' and 'yml',\n                    indicating the location of the data files to be used,\n                    and the yaml document used for validation.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/NeotomaDB/SQL_Project_Repository"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return a dictionary of configuration parameters.\n\n        These configuration parameters can be used to reconstruct the\n        feature extractor, using ``slideflow.build_feature_extractor()``.",
+        "code": "def dump_config(self):\n        \"\"\"Return a dictionary of configuration parameters.\n\n        These configuration parameters can be used to reconstruct the\n        feature extractor, using ``slideflow.build_feature_extractor()``.\n\n        \"\"\"",
+        "license": "apache-2.0",
+        "source_repo": "https://github.com/slideflow/slideflow"
+    },
+    {
+        "language": "python",
+        "human_comment": "Computes the IoU and mean IoU.\n\n        The mean computation ignores NaN elements of the IoU array.\n\n        Returns:\n            Tuple: (IoU, mIoU). The first output is the per class IoU,\n            for K classes it's numpy.ndarray with K elements. The second output,\n            is the mean IoU.",
+        "code": "def value(self, conf_matrix):\n        \"\"\"Computes the IoU and mean IoU.\n\n        The mean computation ignores NaN elements of the IoU array.\n\n        Returns:\n            Tuple: (IoU, mIoU). The first output is the per class IoU,\n            for K classes it's numpy.ndarray with K elements. The second output,\n            is the mean IoU.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/JonasSchult/dcm-net"
+    },
+    {
+        "language": "python",
+        "human_comment": "Main run function for cleaning process",
+        "code": "def transform(self, texts, \n                    to_lower            = False,\n                    # Remove\n                    rm_email_formatting = False, \n                    rm_email_header     = False,\n                    rm_email_footer     = False, \n                    rm_punctuation      = False,\n                    # Placeholders\n                    rp_generic          = False, \n                    rp_num              = False,\n                    # Tokenize\n                    lemmatize           = False,\n                    rm_stopwords        = False,\n                    return_token        = False,\n                    # Whitespace\n                    remove_whitespace   = True\n                ):\n        \"\"\"Main run function for cleaning process\"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/microsoft/verseagility"
+    },
+    {
+        "language": "python",
+        "human_comment": "Persist our data to the database\n\n        Args:\n          txn: Database cursor\n\n        Returns:\n          int number of inserts made to the database",
+        "code": "def sql(self, txn):\n        \"\"\"Persist our data to the database\n\n        Args:\n          txn: Database cursor\n\n        Returns:\n          int number of inserts made to the database\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/akrherz/pyIEM"
+    },
+    {
+        "language": "python",
+        "human_comment": "Detects language of the file\n    :param filename: path to file whose language needs to be detected\n    :return:",
+        "code": "def from_file(filename, requestOptions={}):\n    \"\"\"\n    Detects language of the file\n    :param filename: path to file whose language needs to be detected\n    :return:\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/iscc/iscc-cli"
+    },
+    {
+        "language": "python",
+        "human_comment": "Detects language of content in the buffer\n    :param string: buffered data\n    :return:",
+        "code": "def from_buffer(string, requestOptions={}):\n    \"\"\"\n    Detects language of content in the buffer\n    :param string: buffered data\n    :return:\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/iscc/iscc-cli"
+    },
+    {
+        "language": "python",
+        "human_comment": "Initialize SSH manager with configuration\n        \n        Args:\n            config: CpolarConfig object",
+        "code": "def __init__(self, config: CpolarConfig):\n        \"\"\"\n        Initialize SSH manager with configuration\n        \n        Args:\n            config: CpolarConfig object\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/Hoper-J/cpolar-connect"
+    },
+    {
+        "language": "python",
+        "human_comment": "batch should be a list of (sequence, target, length) tuples...\n    Returns a padded tensor of sequences sorted from longest to shortest,",
+        "code": "def collate_fn(batch):\n    \"\"\"\n    batch should be a list of (sequence, target, length) tuples...\n    Returns a padded tensor of sequences sorted from longest to shortest,\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/NickChiang1215/sklProjectNER"
+    },
+    {
+        "language": "python",
+        "human_comment": "Loads a data file into a list of `InputBatch`s\n        `cls_token_at_end` define the location of the CLS token:\n            - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]\n            - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]\n        `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)",
+        "code": "def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer,\n                                 cls_token_at_end=False, cls_token=\"[CLS]\", cls_token_segment_id=1,\n                                 sep_token=\"[SEP]\", pad_on_left=False, pad_token=0, pad_token_segment_id=0,\n                                 sequence_a_segment_id=0, mask_padding_with_zero=True, ):\n    \"\"\" Loads a data file into a list of `InputBatch`s\n        `cls_token_at_end` define the location of the CLS token:\n            - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]\n            - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]\n        `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/NickChiang1215/sklProjectNER"
+    },
+    {
+        "language": "python",
+        "human_comment": "Draw the energy curve of the QM calculation.\n\n        Parameters:\n            unit (str, optional): The unit of the energy. Defaults to \"hartree\".\n\n        Returns:\n            matplotlib.axes.Axes: The axes of the energy curve plot.",
+        "code": "def draw_energy_curve(self, unit: str = \"hartree\"):\n        \"\"\"\n        Draw the energy curve of the QM calculation.\n\n        Parameters:\n            unit (str, optional): The unit of the energy. Defaults to \"hartree\".\n\n        Returns:\n            matplotlib.axes.Axes: The axes of the energy curve plot.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/gentle1999/MolOP"
+    },
+    {
+        "language": "python",
+        "human_comment": "Download the VGG16 model from the internet if it does not already\n    exist in the data_dir. The file is about 550 MB.",
+        "code": "def maybe_download():\n    \"\"\"\n    Download the VGG16 model from the internet if it does not already\n    exist in the data_dir. The file is about 550 MB.\n    \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/khushmeeet/stylenet"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return a list of references to the tensors for the layers with the given id's.",
+        "code": "def get_layer_tensors(self, layer_ids):\n        \"\"\"\n        Return a list of references to the tensors for the layers with the given id's.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/khushmeeet/stylenet"
+    },
+    {
+        "language": "python",
+        "human_comment": "Return a list of names for the layers with the given id's.",
+        "code": "def get_layer_names(self, layer_ids):\n        \"\"\"\n        Return a list of names for the layers with the given id's.\n        \"\"\"",
+        "license": "mit",
+        "source_repo": "https://github.com/khushmeeet/stylenet"
+    }
+]
