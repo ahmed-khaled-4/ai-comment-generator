@@ -264,21 +264,28 @@ Code:
 Return ONLY the formatted docstring body."""
 
         elif comment_type == "class":
-            return f"""Write a Python class docstring.
+            return f"""You are an expert Python documentation generator.
+
+Write a single, complete Python docstring for the following class, including its methods.
 
 Class:
 {code}
 
-Output format:
-Short description.
+Docstring format:
+Short sentence describing what the class represents.
 
 Attributes:
-    name: description
+    attribute_name: description
+
+Methods:
+    method_name(args): short description
 
 Rules:
-- Write ONLY the docstring text (no triple quotes).
-- Document __init__ parameters as Attributes.
-- If no attributes, write "Attributes: None"
-- Do NOT write code or "Code:" or "def ".
+- Output ONLY the docstring text (no triple quotes, no code).
+- Infer attributes from __init__ parameters and documented instance variables.
+- List important public methods under Methods with a brief description.
+- If there are no attributes, write: "Attributes: None"
+- If there are no public methods, write: "Methods: None"
+- Do NOT repeat the class code or write \"Code:\".
 
 Docstring:"""

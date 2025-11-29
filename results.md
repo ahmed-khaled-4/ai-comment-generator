@@ -1,11 +1,11 @@
 # AI Comment Generator - Test Results
 
-**Generated:** 2025-11-28 20:36:56
+**Generated:** 2025-11-29 03:53:22
 
 ## Summary
 
-- **Total Tests:** 10
-- **Successful:** 10 ✓
+- **Total Tests:** 12
+- **Successful:** 12 ✓
 - **Failed:** 0 ✗
 - **Success Rate:** 100.0%
 
@@ -25,8 +25,8 @@ def add(a, b):
 
 ```
 Args:
-    a: first number to be added
-    b: second number to be added
+    a: first number for addition
+    b: second number for addition
 Returns:
     int: sum of two numbers
 ```
@@ -35,67 +35,65 @@ Returns:
 
 ---
 
-### 2. calculate_area (function)
+### 2. is_even (function)
 
 **Code:**
 ```python
-def calculate_area(length, width):
-    return length * width
+def is_even(n):
+    return n % 2 == 0
 ```
 
 **Generated Comment:**
 
 ```
 Args:
-    length: The length of the rectangle
-    width: The width of the rectangle
+    n: a number to check if it's even or not
 Returns:
-    int: The area of the rectangle
+    bool: True if the input number is even, False otherwise
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 3. is_even (function)
+### 3. greet (function)
 
 **Code:**
 ```python
-def is_even(number):
-    if number % 2 == 0:
-        return True
-    return False
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
 ```
 
 **Generated Comment:**
 
 ```
-Short description line.
 Args:
-    number: an integer to check if it's even or not
+    name: The name of the person to greet.
+    greeting: The type of greeting to use (default is "Hello").
+(blank line)
 Returns:
-    boolean: True if the input is even, False otherwise
+    str: A string containing the greeting and the name of the person.
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 4. filter_positive (function)
+### 4. square (function)
 
 **Code:**
 ```python
-def filter_positive(numbers):
-    return [n for n in numbers if n > 0]
+def square(x):
+    return x * x
 ```
 
 **Generated Comment:**
 
 ```
-Args:
-    numbers: list of integers or floats
-Returns:
-    list: a new list with only positive numbers from the input list
+Args:
+    x: a number to be squared
+Returns:
+    the square of the input number
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
@@ -114,65 +112,107 @@ def reverse_string(text):
 
 ```
 Args:
-    text: The string to be reversed.
+    text: A string to be reversed.
 Returns:
-    A new string that is the input string in reverse order.
+    The input string in reverse order.
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 6. greet (function)
+### 6. filter_positive (function)
 
 **Code:**
 ```python
-def greet(name, greeting="Hello"):
-    return f"{greeting}, {name}!"
+def filter_positive(nums):
+    return [n for n in nums if n > 0]
 ```
 
 **Generated Comment:**
 
 ```
 Args:
-    name: The person to greet.
-    greeting: What to say before the person's name (default is "Hello").
+    nums: a list of numbers to be filtered
 Returns:
-    str: A string containing a greeting for the specified person.
+    list: a new list with only positive numbers from the input list
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 7. Calculator (class)
+### 7. calculate_statistics (function)
 
 **Code:**
 ```python
-class Calculator:
-    def __init__(self):
-        self.value = 0
-    
-    def add(self, x):
-        self.value += x
-        return self.value
+def calculate_statistics(values):
+    total = sum(values)
+    count = len(values)
+    avg = total / count if count > 0 else 0
+    return {"total": total, "average": avg, "count": count}
 ```
 
 **Generated Comment:**
 
 ```
-Short description of the Calculator class. This class is a simple calculator that can perform addition operations. It has one attribute 'value' which stores the current value of the calculator. The 'add' method takes an integer as input and adds it to the current value, returning the new total.
-Attributes:
-    value: An integer representing the current value of the calculator. This is initialized to 0 when a new Calculator object is created.
-Rules:
-- Use this class in conjunction with its methods to perform addition operations on integers. The 'add' method takes an integer as input and adds it to the current value, returning the new total.
+Args:
+    values: list of numbers to calculate statistics for
+Returns:
+    dict: a dictionary containing "total", "average", and "count" keys with their respective calculated values
 ```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 8. Person (class)
+### 8. sanitize_username (function)
+
+**Code:**
+```python
+def sanitize_username(name):
+    cleaned = name.strip().lower()
+    return "".join(ch for ch in cleaned if ch.isalnum() or ch == "_")
+```
+
+**Generated Comment:**
+
+```
+Args:
+    name: The username to be sanitized.
+Returns:
+    str: Sanitized username with only alphanumeric characters and underscores.
+```
+
+*Model: deepseek-coder:6.7b | Language: python*
+
+---
+
+### 9. merge_dicts (function)
+
+**Code:**
+```python
+def merge_dicts(a, b):
+    merged = a.copy()
+    merged.update(b)
+    return merged
+```
+
+**Generated Comment:**
+
+```
+Args:
+    a (dict): The first dictionary to be merged.
+    b (dict): The second dictionary to be merged.
+Returns: 
+    dict: A new dictionary that is a merge of dictionaries 'a' and 'b'. If there are duplicate keys, the value from 'b' will overwrite the one in 'a'.
+```
+
+*Model: deepseek-coder:6.7b | Language: python*
+
+---
+
+### 10. Person (class)
 
 **Code:**
 ```python
@@ -184,41 +224,68 @@ class Person:
 
 **Generated Comment:**
 
-
+```
+Person: Represents a person with a name and age.
+Attributes:
+    name: The name of the person.
+    age: The age of the person.
+Methods:
+    __init__(name, age): Initializes a new instance of Person with the given name and age.
+```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 9. Animal (class)
+### 11. process_records (function)
 
 **Code:**
 ```python
-class Animal:
-    def __init__(self, name):
-        self.name = name
+def process_records(records):
+    valid = [r for r in records if r.get("active")]
+    sorted_records = sorted(valid, key=lambda r: r["timestamp"])
+    return {r["id"]: r for r in sorted_records}
 ```
 
 **Generated Comment:**
 
-
+```
+Args:
+    records: A list of dictionaries representing records with keys "active" and "timestamp".
+Returns:
+    dict: A dictionary where keys are record ids (r["id"]) and values are corresponding records sorted by timestamp in ascending order.
+```
 
 *Model: deepseek-coder:6.7b | Language: python*
 
 ---
 
-### 10. Dog (class)
+### 12. OrderManager (class)
 
 **Code:**
 ```python
-class Dog(Animal):
-    def __init__(self, name):
-        super().__init__(name)
+class OrderManager:
+    def __init__(self):
+        self.orders = []
+
+    def add_order(self, order):
+        if order not in self.orders:
+            self.orders.append(order)
+
+    def export_ids(self):
+        return [o["id"] for o in self.orders if "id" in o]
 ```
 
 **Generated Comment:**
 
-
+```
+OrderManager represents a manager for handling and managing orders. It maintains a list of orders where each order is represented as a dictionary with an 'id' key.
+Attributes:
+    orders: List of dictionaries representing the orders, where each dictionary contains an 'id'.
+Methods:
+    add_order(order): Adds a new order to the manager if it does not already exist in the list. The argument 'order' is expected to be a dictionary with an 'id'.
+    export_ids(): Returns a list of all the ids from the orders that have been added.
+```
 
 *Model: deepseek-coder:6.7b | Language: python*
 

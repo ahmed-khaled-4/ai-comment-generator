@@ -1,60 +1,66 @@
-"""Test code samples for comment generation testing."""
-
-# Simple function - addition
 def add(a, b):
     return a + b
 
 
-# Function with type hints
-def calculate_area(length, width):
-    return length * width
+def is_even(n):
+    return n % 2 == 0
 
 
-# Function with conditional logic
-def is_even(number):
-    if number % 2 == 0:
-        return True
-    return False
-
-
-# Function with list processing
-def filter_positive(numbers):
-    return [n for n in numbers if n > 0]
-
-
-# Function with string manipulation
-def reverse_string(text):
-    return text[::-1]
-
-
-# Function with default parameters
 def greet(name, greeting="Hello"):
     return f"{greeting}, {name}!"
 
 
-# Simple class with methods
-class Calculator:
-    def __init__(self):
-        self.value = 0
-    
-    def add(self, x):
-        self.value += x
-        return self.value
+def square(x):
+    return x * x
 
 
-# Class with properties
+def reverse_string(text):
+    return text[::-1]
+
+
+def filter_positive(nums):
+    return [n for n in nums if n > 0]
+
+
+def calculate_statistics(values):
+    total = sum(values)
+    count = len(values)
+    avg = total / count if count > 0 else 0
+    return {"total": total, "average": avg, "count": count}
+
+
+def sanitize_username(name):
+    cleaned = name.strip().lower()
+    return "".join(ch for ch in cleaned if ch.isalnum() or ch == "_")
+
+
+def merge_dicts(a, b):
+    merged = a.copy()
+    merged.update(b)
+    return merged
+
+
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
 
 
-# Class with inheritance
-class Animal:
-    def __init__(self, name):
-        self.name = name
+def process_records(records):
+    valid = [r for r in records if r.get("active")]
+    sorted_records = sorted(valid, key=lambda r: r["timestamp"])
+    return {r["id"]: r for r in sorted_records}
 
 
-class Dog(Animal):
-    def __init__(self, name):
-        super().__init__(name)
+
+class OrderManager:
+    def __init__(self):
+        self.orders = []
+
+    def add_order(self, order):
+        if order not in self.orders:
+            self.orders.append(order)
+
+    def export_ids(self):
+        return [o["id"] for o in self.orders if "id" in o]
+
