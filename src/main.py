@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional
 import logging
-from src.models.ai_client import OllamaService
-from src.models.model_config import ModelConfig
+from models.ai_client import OllamaService
+from models.model_config import ModelConfig
 
 # Configure logging
 logging.basicConfig(

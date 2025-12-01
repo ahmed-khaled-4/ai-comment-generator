@@ -1,0 +1,16 @@
+id,Correctness,Readability,Usefulness,Has Hallucination,Severity,Hallucination Description,Notes
+83,2,2,2,Yes,Moderate,Assumes mask filters produce a filtered DataFrame; code shows nothing about filter logic,"Description is guesswork, docstring vague"
+53,4,3,4,No,,,
+70,3,3,2,Yes,Minor,Adds arg description not present; incomplete,"Only restates name, nothing useful"
+45,4,3,4,No,,,
+44,5,3,5,No,,,
+39,5,3,4,No,,,
+22,5,4,5,No,,,
+80,5,3,5,No,,,
+10,2,2,2,Yes,Moderate,Says return is str but function returns None,Misleading description
+0,5,3,5,No,,,
+89,4,3,5,No,,,
+95,4,3,4,No,,,
+51,3,3,3,Yes,Moderate,Invents output dictionary spec not implied in code,Function only describes multiprocessing
+57,4,3,4,No,,,
+42,5,3,4,No,,,
