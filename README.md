@@ -1,53 +1,81 @@
 # AI Comment Generator
 
-An AI-powered system for automatically generating code comments using large language models.
+An AI-powered system for automatically generating code comments using large language models. This project implements a FastAPI-based prototype that leverages Ollama's DeepSeek-Coder 6.7B model to generate Python docstrings for functions and classes.
+
+## Features
+
+- 🤖 **AI-Powered Comment Generation**: Automatically generates docstrings using DeepSeek-Coder 6.7B
+- 🚀 **FastAPI REST API**: Easy-to-use HTTP API with interactive documentation
+- 📝 **Multiple Comment Types**: Supports function, class, and inline comments
+- 🔧 **Configurable Parameters**: Adjustable temperature, max tokens, and model selection
+- 🧹 **Smart Post-Processing**: Automatic cleaning of generated output
+- 📊 **Comprehensive Testing**: Test suite with 12 code samples (100% success rate)
+- 📈 **Performance Metrics**: Tracks latency, token usage, and generation quality
+- 🔒 **Privacy-First**: Local Ollama deployment ensures code stays on-premises
 
 ## Project Structure
 
 ```
 ai-comment-generator/
-├── README.md
-├── requirements.txt
-├── .env.example
-├── .gitignore
+├── README.md                      # This file
+├── requirements.txt               # Python dependencies
+├── .env.example                   # Environment variables template
+├── .gitignore                     # Git ignore rules
+├── test_code_samples.py           # Code samples for testing
+├── test_comment_generation.py    # Test suite runner
+├── results.json                   # Test results (JSON)
+├── results.md                     # Test results (Markdown)
+├── results.html                   # Test results (HTML)
 ├── src/
 │   ├── __init__.py
 │   ├── models/
 │   │   ├── __init__.py
-│   │   ├── ai_client.py          # AI model integration
+│   │   ├── ai_client.py          # OllamaService - LLM integration
 │   │   └── model_config.py       # Model configuration management
 │   ├── prompts/
 │   │   ├── __init__.py
-│   │   └── templates.py          # Prompt templates
+│   │   └── templates.py          # Prompt templates (placeholder)
 │   ├── data/
 │   │   ├── __init__.py
-│   │   ├── dataset_loader.py     # Dataset loading/preprocessing
-│   │   └── preprocessor.py       # Code preprocessing utilities
+│   │   ├── dataset_loader.py     # Dataset loading (placeholder)
+│   │   └── preprocessor.py      # Code preprocessing (placeholder)
 │   ├── evaluation/
 │   │   ├── __init__.py
-│   │   ├── metrics.py            # BLEU, ROUGE, cosine similarity
-│   │   └── evaluator.py          # Evaluation orchestration
+│   │   ├── metrics.py            # Evaluation metrics (placeholder)
+│   │   └── evaluator.py         # Evaluation orchestration (placeholder)
 │   ├── logging/
 │   │   ├── __init__.py
-│   │   └── logger.py             # Prompt/response logging
-│   └── main.py                   # Main entry point
+│   │   └── logger.py             # Logging utilities (placeholder)
+│   └── main.py                   # FastAPI application entry point
+├── dataset/
+│   ├── clean_dataset.json        # 100 code-comment pairs
+│   └── dataset_description.md    # Dataset documentation
 ├── experiments/
-│   ├── run_experiments.py        # Batch experiment runner
+│   ├── run_experiments.py        # Batch experiment runner (placeholder)
 │   ├── configs/
-│   │   └── experiment_config.yaml # Experiment configurations
+│   │   └── experiment_config.yaml # Experiment configs (placeholder)
 │   └── notebooks/
-│       └── analysis.ipynb        # Results analysis
+│       └── analysis.ipynb        # Results analysis (placeholder)
 ├── data/
-│   ├── raw/                      # Raw dataset
-│   ├── processed/                # Preprocessed dataset
-│   └── results/                  # Experiment results
+│   ├── raw/                      # Raw dataset storage
+│   ├── processed/                # Preprocessed dataset storage
+│   └── results/                  # Experiment results storage
 ├── logs/
 │   └── prompts/                  # Logged prompts/responses
 ├── reports/
-│   └── phase2_report.md          # Phase 2 research report
+│   └── phase2_report.md          # Phase 2 research report (IEEE format)
 └── tests/
-    └── test_evaluation.py
+    └── test_evaluation.py        # Evaluation tests (placeholder)
 ```
+
+### Key Files
+
+- **`src/main.py`**: FastAPI application with `/generate_comment` and `/health` endpoints
+- **`src/models/ai_client.py`**: Core LLM integration using Ollama, includes prompt formatting and response cleaning
+- **`src/models/model_config.py`**: Configuration management for model parameters
+- **`test_comment_generation.py`**: Comprehensive test suite that evaluates the API on 12 code samples
+- **`test_code_samples.py`**: Test dataset with 12 Python code samples (functions and classes)
+- **`reports/phase2_report.md`**: Detailed research report in IEEE format
 
 ## Setup & Installation
 
@@ -129,8 +157,8 @@ Generate a code comment for the provided code.
   "code": "def add(a, b):\n    return a + b",
   "language": "python",
   "comment_type": "function",
-  "temperature": 0.7,
-  "max_tokens": 400,
+  "temperature": 0.4,
+  "max_tokens": 600,
   "model": "deepseek-coder:6.7b"
 }
 ```
@@ -139,20 +167,25 @@ Generate a code comment for the provided code.
 - `code` (required): Source code to generate comment for
 - `language` (optional, default: "python"): Programming language
 - `comment_type` (optional, default: "function"): Type of comment - `function`, `class`, or `inline`
-- `temperature` (optional, default: 0.7): Sampling temperature (0.0-2.0)
-- `max_tokens` (optional, default: 400): Maximum tokens to generate (1-2000)
+- `temperature` (optional, default: 0.4): Sampling temperature (0.0-2.0). Lower values produce more focused output
+- `max_tokens` (optional, default: 600): Maximum tokens to generate (1-2000)
 - `model` (optional): Ollama model to use (overrides default)
 
 **Response:**
 ```json
 {
-  "comment": "\"\"\"Add two numbers together.\n\nArgs:\n    a: First number\n    b: Second number\n\nReturns:\n    Sum of a and b\n\"\"\"",
+  "comment": "Args:\n    a: first number for addition\n    b: second number for addition\nReturns:\n    int: sum of two numbers",
   "model": "deepseek-coder:6.7b",
   "language": "python",
   "comment_type": "function",
   "metadata": {
-    "temperature": 0.7,
-    "max_tokens": 400
+    "temperature": 0.4,
+    "max_tokens": 600,
+    "top_p": 0.9,
+    "latency": 2.57,
+    "prompt_tokens": 266,
+    "completion_tokens": 37,
+    "total_tokens": 303
   }
 }
 ```
@@ -182,7 +215,8 @@ payload = {
     "code": "def add(a, b):\n    return a + b",
     "language": "python",
     "comment_type": "function",
-    "temperature": 0.7
+    "temperature": 0.4,
+    "max_tokens": 600
 }
 
 response = requests.post(url, json=payload)
@@ -271,11 +305,91 @@ print(response.json()["comment"])
 
 Run: `python test_api.py`
 
+### Running the Test Suite
+
+The project includes a comprehensive test suite that evaluates the API on 12 code samples:
+
+```bash
+# Make sure the API server is running first
+python -m src.main
+
+# In another terminal, run the test suite
+python test_comment_generation.py
+```
+
+The test suite will:
+- Test all code samples from `test_code_samples.py`
+- Generate comments for functions and classes
+- Save results in multiple formats:
+  - `results.json` - Machine-readable JSON format
+  - `results.md` - Human-readable Markdown format
+  - `results.html` - Interactive HTML report
+
+**Test Results Summary:**
+- ✅ **Success Rate**: 100% (12/12 tests passed)
+- ⚡ **Average Latency**: 4.2 seconds
+- 📊 **Average Tokens**: 328 tokens per generation
+- 🎯 **Coverage**: 9 functions, 3 classes (simple to complex)
+
+## Dataset
+
+The project includes a curated dataset of 100 high-quality code-comment pairs:
+
+- **Location**: `dataset/clean_dataset.json`
+- **Source**: Open-source GitHub repositories
+- **Languages**: Python (primary), Java
+- **Licenses**: MIT, Apache-2.0, BSD
+- **Quality**: Human-written docstrings, deduplicated, quality-checked
+
+See `dataset/dataset_description.md` for more details.
+
+## Performance Metrics
+
+Based on test results with DeepSeek-Coder 6.7B:
+
+| Metric | Value |
+|--------|-------|
+| Success Rate | 100% (12/12) |
+| Average Latency | 4.2 seconds |
+| Average Prompt Tokens | 280 tokens |
+| Average Completion Tokens | 48 tokens |
+| Average Total Tokens | 328 tokens |
+| Latency Range | 2.2s - 12.8s |
+
 ## Phase 2 Deliverables
 
-- [ ] Prototype Implementation
-- [ ] Experimental Setup & Dataset
-- [ ] Early Experimental Results
-- [ ] Hallucination & Error Analysis
-- [ ] Early Research Report
-- [ ] GitHub Repository
+- [x] ✅ Prototype Implementation
+- [x] ✅ Experimental Setup & Dataset
+- [x] ✅ Early Experimental Results
+- [x] ✅ Hallucination & Error Analysis
+- [x] ✅ Early Research Report
+- [x] ✅ GitHub Repository
+
+**Phase 2 Status**: ✅ **COMPLETE**
+
+See `reports/phase2_report.md` for the detailed research report (IEEE format).
+
+## Project Status
+
+**Current Phase**: Phase 2 Complete ✅
+
+**Next Steps (Phase 3)**:
+- Enhanced post-processing and format validation
+- Multi-language support (Java, JavaScript, C++)
+- Expanded evaluation with automated metrics (BLEU, ROUGE)
+- Human evaluation study
+- Comparative analysis across multiple models
+
+## Contributing
+
+This is a research project. For questions or contributions, please open an issue or contact the project maintainers.
+
+## License
+
+[Add your license here]
+
+## Acknowledgments
+
+- [Ollama](https://ollama.com) for providing local LLM infrastructure
+- [DeepSeek](https://github.com/deepseek-ai/DeepSeek-Coder) for the DeepSeek-Coder model
+- Open-source contributors whose code samples are included in the dataset
