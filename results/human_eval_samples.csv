@@ -1,0 +1,245 @@
+id,input,expected,task,model_output,model,prompt_used,success,input_length,correctness_rating,readability_rating,usefulness_rating,has_hallucination,hallucination_severity,hallucination_description,evaluator_notes
+83,"def get(self, df: DataFrame, *mask):
+		""""""
+		Return result from the masks request
+		""""""",Return result from the masks request,comment_generation,"Args:
+    df: Input pandas dataframe for operations.
+    mask: Variable length argument to apply different kinds of filters on dataframe
+Returns:
+    DataFrame: Returns a filtered pandas dataframe based on the input masks",deepseek-coder:6.7b,,True,,,,,,,,
+53,"def id(self):
+        """"""Gets the id of this OperationSortResultsScore.
+
+
+        :return: The id of this OperationSortResultsScore.
+        :rtype: str
+        """"""","Gets the id of this OperationSortResultsScore.
+
+
+        :return: The id of this OperationSortResultsScore.
+        :rtype: str",comment_generation,"Args:
+    self: instance of the class
+Returns:
+    The id of this OperationSortResultsScore: string type",deepseek-coder:6.7b,,True,,,,,,,,
+70,"def sample_object_count(self):
+        """"""
+        Sample the number of objects to place on this particular furniture unit.
+        :return: Number of objects.
+        """"""","Sample the number of objects to place on this particular furniture unit.
+        :return: Number of objects.",comment_generation,"Args:
+    self: The instance of the",deepseek-coder:6.7b,,True,,,,,,,,
+45,"def description(self):
+        """"""Gets the description of this ModifySecurityGroupAttributesRequest.  # noqa: E501
+
+
+        :return: The description of this ModifySecurityGroupAttributesRequest.  # noqa: E501
+        :rtype: str
+        """"""","Gets the description of this ModifySecurityGroupAttributesRequest.  # noqa: E501
+
+
+        :return: The description of this ModifySecurityGroupAttributesRequest.  # noqa: E501
+        :rtype: str",comment_generation,"Args:
+    self: Instance of the object itself (used to access",deepseek-coder:6.7b,,True,,,,,,,,
+44,"def matrix_to_quaternion(matrix, eps=1e-6):
+    """"""
+    This function is borrowed from https://github.com/kornia/kornia
+    Convert rotation matrix to 4d quaternion vector
+    This algorithm is based on algorithm described in
+    https://github.com/KieranWynn/pyquaternion/blob/master/pyquaternion/quaternion.py#L201
+
+    :param matrix (N, 3, 3)
+    """"""","This function is borrowed from https://github.com/kornia/kornia
+    Convert rotation matrix to 4d quaternion vector
+    This algorithm is based on algorithm described in
+    https://github.com/KieranWynn/pyquaternion/blob/master/pyquaternion/quaternion.py#L201
+
+    :param matrix (N, 3, 3)",comment_generation,a clean Python docstring for the provided code snippet:,deepseek-coder:6.7b,,True,,,,,,,,
+39,"def matrix_to_cont_6d(matrix):
+    """"""
+    :param matrix (*, 3, 3)
+    :returns 6d vector (*, 6)
+    """"""",":param matrix (*, 3, 3)
+    :returns 6d vector (*, 6)",comment_generation,"""Args:\n    matrix (*, 3, 3)\n\nReturns:\n    6d vector (*, 6)""",deepseek-coder:6.7b,,True,,,,,,,,
+22,"def disable_replication(self, context, group, volumes):
+        """"""Disables replication for a group and volumes in the group.
+
+        :param group: group object
+        :param volumes: list of volume objects in the group
+        :returns: model_update - dict of group updates
+        :returns: volume_model_updates - list of dicts of volume updates
+        """"""","Disables replication for a group and volumes in the group.
+
+        :param group: group object
+        :param volumes: list of volume objects in the group
+        :returns: model_update - dict of group updates
+        :returns: volume_model_updates - list of dicts of volume updates",comment_generation,"Args:
+    context (object): The context object that contains necessary information for executing the function.
+    group (object): The group object whose replication needs to be disabled.
+    volumes (list): A list of volume objects in the group whose replication needs to be disabled.
+Returns:
+    model_update (dict): A dictionary containing updates related to the group that disables its replication.
+    volume_model_updates (list): A list of dictionaries, each containing updates for a specific volume that disables its replication.",deepseek-coder:6.7b,,True,,,,,,,,
+80,"def is_object_in_air(segmask, body_uid):
+    """"""
+    From the segmask image from a parallel projection, check if the object is balancing over the edge of the workspace.
+    :param segmask: Parallel projection segmask image.
+    :param body_uid: Physics simulation UID of the body.
+    :return: True if object is balancing over workspace, False otherwise.
+    """"""","From the segmask image from a parallel projection, check if the object is balancing over the edge of the workspace.
+    :param segmask: Parallel projection segmask image.
+    :param body_uid: Physics simulation UID of the body.
+    :return: True if object is balancing over workspace, False otherwise.",comment_generation,"Args:
+    segmask: Parallel projection segmask image.
+    body_uid: Physics simulation UID of the body.
+Returns:
+    bool: True if object is balancing over workspace, False otherwise.",deepseek-coder:6.7b,,True,,,,,,,,
+10,"def get_default_filter_function(self):
+        """"""Get the default filter_function string.
+
+        Each driver could overwrite the method to return a well-known
+        default string if it is available.
+
+        :returns: None
+        """"""","Get the default filter_function string.
+
+        Each driver could overwrite the method to return a well-known
+        default string if it is available.
+
+        :returns: None",comment_generation,"Args:
+    self
+Returns:
+    str: Default filter function as a string",deepseek-coder:6.7b,,True,,,,,,,,
+0,"def do_deploy(archive_path):
+    """"""Distributes an archive to a web server.
+    Args:
+        archive_path (str): The path of the archive to distribute.
+    Returns:
+        If the file doesn't exist at archive_path or an error occurs - False.
+        Otherwise - True.
+    """"""","Distributes an archive to a web server.
+    Args:
+        archive_path (str): The path of the archive to distribute.
+    Returns:
+        If the file doesn't exist at archive_path or an error occurs - False.
+        Otherwise - True.",comment_generation,"Args:
+archive_path (str): The path of the archive to distribute.
+Returns:
+If the file doesn't exist at archive_path or an error occurs - False. Otherwise - True.",deepseek-coder:6.7b,,True,,,,,,,,
+89,"def transform(self, texts, 
+                    to_lower            = False,
+                    # Remove
+                    rm_email_formatting = False, 
+                    rm_email_header     = False,
+                    rm_email_footer     = False, 
+                    rm_punctuation      = False,
+                    # Placeholders
+                    rp_generic          = False, 
+                    rp_num              = False,
+                    # Tokenize
+                    lemmatize           = False,
+                    rm_stopwords        = False,
+                    return_token        = False,
+                    # Whitespace
+                    remove_whitespace   = True
+                ):
+        """"""Main run function for cleaning process""""""",Main run function for cleaning process,comment_generation,"Args:
+- texts (list of str): A list of text strings to be cleaned
+- to_lower (bool, optional): Whether to convert all characters to lowercase or not. Default is False.
+- rm_email_formatting (bool, optional): Whether to remove email formatting like angle brackets and periods in the middle of words. Default is False.
+- rm_email_header (bool, optional): Whether to remove headers from emails. Default is False.
+- rm_email_footer (bool, optional): Whether to remove footers from emails. Default is False.
+- rm_punctuation (bool, optional): Whether to remove punctuation marks. Default is False.
+- rp_generic (str or bool, optional): If a string, replace all occurrences of this substring with the generic placeholder. If True, use the default placeholder ""REDACTED"". Default is False.
+- rp_num (bool, optional): Whether to replace numbers with a specific number placeholder. Default is False.
+- lemmatize (bool, optional): Whether to convert words to their base form or not. Default is False.
+- rm_stopwords (bool, optional): Whether to remove common words that usually do not carry much meaningful information. Default is False.
+- return_token (bool, optional): Whether to return the cleaned texts as a list of tokens (words). Default is False.
+- remove_whitespace (bool, optional): Whether to remove all whitespaces including tabs and newlines. Default is True.
+Returns:
+- list of str or str: If `return_token` is set to True, return the cleaned texts as a list of tokens; otherwise, return the cleaned texts as one long string. The cleaning process will be done based on the input arguments provided.",deepseek-coder:6.7b,,True,767.0,,,,,,,
+95,"def convert_examples_to_features(examples, label_list, max_seq_length, tokenizer,
+                                 cls_token_at_end=False, cls_token=""[CLS]"", cls_token_segment_id=1,
+                                 sep_token=""[SEP]"", pad_on_left=False, pad_token=0, pad_token_segment_id=0,
+                                 sequence_a_segment_id=0, mask_padding_with_zero=True, ):
+    """""" Loads a data file into a list of `InputBatch`s
+        `cls_token_at_end` define the location of the CLS token:
+            - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]
+            - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]
+        `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)
+    """"""","Loads a data file into a list of `InputBatch`s
+        `cls_token_at_end` define the location of the CLS token:
+            - False (Default, BERT/XLM pattern): [CLS] + A + [SEP] + B + [SEP]
+            - True (XLNet/GPT pattern): A + [SEP] + B + [SEP] + [CLS]
+        `cls_token_segment_id` define the segment id associated to the CLS token (0 for BERT, 2 for XLNet)",comment_generation,"Args:
+    examples: A list of InputExample objects containing the inputs and labels.
+    label_list: The list of all possible labels.
+    max_seq_length: Maximum length of sequences.
+    tokenizer: An instance of a tokenizer that can be used to process text data.
+    cls_token_at_end: A boolean indicating whether the CLS token should be added at the end or not.
+    cls_token: The string representing the CLS token.
+    cls_token_segment_id: The segment id associated with the CLS token.
+    sep_token: The string representing the SEP token.
+    pad_on_left: A boolean indicating whether padding should be added on the left or not.
+    pad_token: The value to use for padding.
+    pad_token_segment_id: The segment id associated with the pad token.
+    sequence_a_segment_id: The segment id for the first sequence in a pair.
+    mask_padding_with_zero: A boolean indicating whether padding tokens should be masked or not.
+Returns:
+    A list of `InputBatch` objects prepared from the input examples, ready to be fed into a model.",deepseek-coder:6.7b,,True,763.0,,,,,,,
+51,"def fit_mods_parallel_processes(X, Y, k_exprs, restarts = 5, optimiser = GPy_optimisers[0], max_retries = 1):
+    '''Concurrently fit models (from a list of kernels) on the same data in as many processes as there are available processor cores using `multiprocessing`'s `Pool`
+    (this function does NOT use GPy's own `parallel` argument, which parallelises within single fits rather than across multiple ones)
+
+    NOTE: Any code calling this function (however many nested levels in) should be within an ""if __name__ == '__main__':"" preamble for full OS-agnostic use.
+    '''","Concurrently fit models (from a list of kernels) on the same data in as many processes as there are available processor cores using `multiprocessing`'s `Pool`
+    (this function does NOT use GPy's own `parallel` argument, which parallelises within single fits rather than across multiple ones)
+
+    NOTE: Any code calling this function (however many nested levels in) should be within an ""if __name__ == '__main__':"" preamble for full OS-agnostic use.",comment_generation,"Args:
+    X (numpy array): Input data matrix
+    Y (numpy array): Output/target values corresponding to input data
+    k_exprs (list of GPy kernels): List of kernel expressions to fit on the data
+    restarts (int, optional): Number of times to restart optimisation. Default is 5
+    optimiser (GPy optimiser instance, optional): Optimiser to use for fitting models. Default is the first element in `GPy_optimisers` list
+    max_retries (int, optional): Maximum number of retries before raising an exception. Default is 1
+Returns:
+    dict: A dictionary containing fitted GPy model instances and their corresponding R2 scores",deepseek-coder:6.7b,,True,576.0,,,,,,,
+57,"def create_hierarchy_rows(self, new_hierarchy, row_len):
+        """"""Returns rows list of hierarchy rows that should be put inside
+        data to show new_hierarchy. If hierarchy rows have been added for
+        new_hierarchy already, empty list will be returned. Hierarchy rows
+        will be have not empty: id(if created), type, name and summable fields.
+        
+        Arguments:
+        new_hierarchy -- list representing hierarchy in row in data 
+        row_len -- length of that row, needed create correct hierarchy row
+        """"""","Returns rows list of hierarchy rows that should be put inside
+        data to show new_hierarchy. If hierarchy rows have been added for
+        new_hierarchy already, empty list will be returned. Hierarchy rows
+        will be have not empty: id(if created), type, name and summable fields.
+        
+        Arguments:
+        new_hierarchy -- list representing hierarchy in row in data 
+        row_len -- length of that row, needed create correct hierarchy row",comment_generation,"Returns rows list of hierarchy rows that should be put inside
+data to show new_hierarchy. If hierarchy rows have been added for
+new_hierarchy already, empty list will be returned. Hierarchy rows
+will be have not empty: id(if created), type, name and summable fields.
+Arguments:
+new_hierarchy -- list representing hierarchy in row in data 
+row_len -- length of that row, needed create correct hierarchy row",deepseek-coder:6.7b,,True,542.0,,,,,,,
+42,"def quaternion_to_matrix(quaternion):
+    """"""
+    Convert a quaternion to a rotation matrix.
+    Taken from https://github.com/kornia/kornia, based on
+    https://github.com/matthew-brett/transforms3d/blob/8965c48401d9e8e66b6a8c37c65f2fc200a076fa/transforms3d/quaternions.py#L101
+    https://github.com/tensorflow/graphics/blob/master/tensorflow_graphics/geometry/transformation/rotation_matrix_3d.py#L247
+    :param quaternion (N, 4) expects WXYZ order
+    returns rotation matrix (N, 3, 3)
+    """"""","Convert a quaternion to a rotation matrix.
+    Taken from https://github.com/kornia/kornia, based on
+    https://github.com/matthew-brett/transforms3d/blob/8965c48401d9e8e66b6a8c37c65f2fc200a076fa/transforms3d/quaternions.py#L101
+    https://github.com/tensorflow/graphics/blob/master/tensorflow_graphics/geometry/transformation/rotation_matrix_3d.py#L247
+    :param quaternion (N, 4) expects WXYZ order
+    returns rotation matrix (N, 3, 3)",comment_generation,"Args:
+    quaternion: A N-by-4 tensor in which each row represents a quaternion with elements in WXYZ order.
+Returns:
+    rotation_matrix: A N-by-3-by-3 tensor representing the corresponding rotation matrices. The rotation is performed in XYZ order.",deepseek-coder:6.7b,,True,499.0,,,,,,,
