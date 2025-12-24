@@ -1,8 +1,9 @@
-# evaluator.py - Complete evaluation pipeline with empty comment handling
+# src/evaluation/evaluator.py - Complete evaluation pipeline with hallucination detection
 import json
 from pathlib import Path
 from src.models.api_client import APIClient
 from src.evaluation.metrics import MetricsCalculator
+from src.evaluation.hallucination import HallucinationDetector
 
 class EvaluationPipeline:
     """
@@ -11,8 +12,9 @@ class EvaluationPipeline:
     This class handles:
     1. Loading dataset
     2. Generating comments for each code sample
-    3. Computing per-sample and overall metrics
-    4. Saving results to multiple output files
+    3. Computing per-sample metrics
+    4. Detecting hallucinations and failure modes
+    5. Saving results to multiple output files
     """
     
     def __init__(self, dataset_path="dataset/clean_dataset.json"):
@@ -25,6 +27,7 @@ class EvaluationPipeline:
         self.dataset_path = dataset_path
         self.client = APIClient()
         self.metrics_calc = MetricsCalculator()
+        self.hallucination_detector = HallucinationDetector()
     
     def load_dataset(self):
         """
@@ -41,8 +44,9 @@ class EvaluationPipeline:
         Main evaluation pipeline:
         1. Generate comments for all code samples
         2. Compute per-sample metrics
-        3. Compute overall metrics
-        4. Save results to CSV and JSON files
+        3. Detect hallucinations
+        4. Compute overall metrics
+        5. Save results to CSV and JSON files
         
         Returns:
             Dict containing overall metric scores
@@ -95,21 +99,30 @@ class EvaluationPipeline:
         if empty_count > 0:
             print(f"\n Warning: {empty_count} samples had empty/failed generation")
         
-        print("          METRICS COMPUTATION PHASE")
+        print("          METRICS & HALLUCINATION PHASE")
         
-        # Phase 2: Compute per-sample metrics
-        print("Computing per-sample metrics...")
+        # Phase 2: Compute per-sample metrics & Detect Hallucinations
+        print("Computing per-sample metrics and detecting hallucinations...")
         per_sample_computed = False
         try:
             per_sample_metrics = self.metrics_calc.compute_per_sample_metrics_safe(
                 references, predictions
             )
             
-            # Add per-sample metrics to each row
+            # Add metrics and run hallucination detection for each row
             for row, metrics in zip(rows, per_sample_metrics):
                 row.update(metrics)
+                
+                # --- NEW: Run Hallucination Detector ---
+                flags = self.hallucination_detector.analyze(
+                    row['code'], 
+                    row['model_comment'], 
+                    score_metrics=metrics
+                )
+                # Join flags into a single string for CSV (e.g., "TOO_SHORT;LOW_TEXT_OVERLAP")
+                row['hallucination_flags'] = ";".join(flags)
             
-            print(" Per-sample metrics computed successfully\n")
+            print(" Per-sample metrics & hallucination flags computed successfully\n")
             per_sample_computed = True
             
         except Exception as e:
@@ -124,6 +137,7 @@ class EvaluationPipeline:
                 "bertscore_precision": 0.0,
                 "bertscore_recall": 0.0,
                 "bertscore_f1": 0.0,
+                "hallucination_flags": "ERROR_COMPUTING"
             }
             for row in rows:
                 row.update(default_metrics)
@@ -228,6 +242,18 @@ class EvaluationPipeline:
                     f.write(f"{lang}: {count} samples\n")
                 f.write("\n")
                 
+                # --- NEW: Hallucination Stats ---
+                f.write("HALLUCINATION & FAILURE ANALYSIS\n")
+                all_flags = []
+                for r in rows:
+                    if 'hallucination_flags' in r and r['hallucination_flags']:
+                        all_flags.extend(r['hallucination_flags'].split(';'))
+                
+                flag_counts = Counter(all_flags)
+                for flag, count in flag_counts.most_common():
+                    f.write(f"{flag}: {count} occurrences\n")
+                f.write("\n")
+
                 # Best and worst samples (if metrics available)
                 if "bleu" in rows[0]:
                     sorted_by_bleu = sorted(rows, key=lambda x: x.get("bleu", 0), reverse=True)
@@ -241,9 +267,9 @@ class EvaluationPipeline:
                     
                     f.write("BOTTOM 5 SAMPLES (by BLEU)\n")
                     for i, row in enumerate(sorted_by_bleu[-5:], 1):
+                        flags = row.get('hallucination_flags', 'N/A')
                         f.write(f"{i}. ID={row['id']}, BLEU={row.get('bleu', 0):.4f}, "
-                               f"ROUGE-1={row.get('rouge1', 0):.4f}, "
-                               f"BERTScore-F1={row.get('bertscore_f1', 0):.4f}\n")
+                               f"Flags={flags}\n")
                     f.write("\n")
                 
                 f.write("End of Report\n")
@@ -251,7 +277,6 @@ class EvaluationPipeline:
             print(f" Analysis report saved to: {report_path}")
         except Exception as e:
             print(f" Could not save analysis report: {e}")
-
 
 if __name__ == "__main__":
     """

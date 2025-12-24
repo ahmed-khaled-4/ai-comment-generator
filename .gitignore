@@ -44,6 +44,11 @@ data/processed/*
 !data/processed/.gitkeep
 data/results/*
 !data/results/.gitkeep
+# Ignore specific large dataset files if needed
+# dataset/*.json
+
+# Hugging Face & AI Cache (Important for BERTScore/Evaluate)
+.cache/
 
 # Logs
 logs/**/*.jsonl
@@ -68,6 +73,12 @@ results.html
 test_results/
 *.test.json
 
+# Analysis Reports & Metrics (Safety catch for root files)
+analysis_report.txt
+metrics.csv
+overall_metrics.json
+*.png
+
 # Pytest
 .pytest_cache/
 .coverage
@@ -78,3 +89,6 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# === Generated Results Folder ===
+results/
