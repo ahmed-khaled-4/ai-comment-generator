@@ -2,10 +2,22 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
-from typing import Optional
+from typing import Optional, Dict, List
 import logging
-from models.ai_client import OllamaService
-from models.model_config import ModelConfig
+
+# Existing imports
+from src.models.ai_client import OllamaService
+from src.models.model_config import ModelConfig
+
+# --- NEW: Import Evaluation Tools ---
+# We use try/except to handle cases where these might not be fully set up yet
+try:
+    from src.evaluation.metrics import MetricsCalculator
+    from src.evaluation.hallucination import HallucinationDetector
+    EVALUATION_AVAILABLE = True
+except ImportError as e:
+    logging.warning(f"Evaluation modules not found: {e}")
+    EVALUATION_AVAILABLE = False
 
 # Configure logging
 logging.basicConfig(
@@ -34,8 +46,23 @@ app.add_middleware(
 default_config = ModelConfig()
 ollama_service = OllamaService(model=default_config.model_name, config=default_config)
 
+# Initialize Evaluation Tools (Global)
+metrics_calc = None
+hallucination_detector = None
+if EVALUATION_AVAILABLE:
+    try:
+        metrics_calc = MetricsCalculator()
+        hallucination_detector = HallucinationDetector()
+        logger.info("Evaluation tools initialized successfully.")
+    except Exception as e:
+        logger.error(f"Failed to initialize evaluation tools: {e}")
+        EVALUATION_AVAILABLE = False
 
-# Request/Response Models
+
+# ==========================================
+# Pydantic Models
+# ==========================================
+
 class CommentRequest(BaseModel):
     """Request model for comment generation."""
     code: str = Field(..., description="Source code to generate comment for")
@@ -78,17 +105,39 @@ class HealthResponse(BaseModel):
     model: str
 
 
+# --- NEW: Evaluation Models ---
+class EvaluationRequest(BaseModel):
+    """Request model for evaluation."""
+    code: str = Field(..., description="Code to evaluate")
+    language: str = Field(default="python", description="Programming language")
+    human_comment: Optional[str] = Field(None, description="Human reference comment for calculating metrics (BLEU, etc.)")
+
+class EvaluationResponse(BaseModel):
+    """Response model for evaluation results."""
+    generated_comment: str
+    metrics: Dict[str, float] = Field(default_factory=dict, description="Evaluation scores (BLEU, BERTScore, etc.)")
+    hallucination_flags: List[str] = Field(default_factory=list, description="Detected issues (e.g., 'TOO_SHORT', 'HALLUCINATION')")
+
+
+# ==========================================
+# Endpoints
+# ==========================================
+
 @app.get("/", tags=["General"])
 async def root():
     """Root endpoint."""
+    endpoints = {
+        "generate": "/generate_comment",
+        "health": "/health",
+        "docs": "/docs"
+    }
+    if EVALUATION_AVAILABLE:
+        endpoints["evaluate"] = "/evaluate"
+        
     return {
         "message": "AI Comment Generator API",
         "version": "1.0.0",
-        "endpoints": {
-            "generate": "/generate_comment",
-            "health": "/health",
-            "docs": "/docs"
-        }
+        "endpoints": endpoints
     }
 
 
@@ -112,12 +161,6 @@ async def health_check():
 async def generate_comment(request: CommentRequest):
     """
     Generate a comment for the given code.
-    
-    Args:
-        request: CommentRequest with code and parameters
-    
-    Returns:
-        CommentResponse with generated comment
     """
     try:
         # Use custom model if provided
@@ -148,6 +191,57 @@ async def generate_comment(request: CommentRequest):
             status_code=500,
             detail=f"Error generating comment: {str(e)}"
         )
+
+
+# --- NEW: Evaluation Endpoint ---
+@app.post("/evaluate", response_model=EvaluationResponse, tags=["Evaluation"])
+async def evaluate_code_sample(request: EvaluationRequest):
+    """
+    Generates a comment, calculates quality metrics, and checks for hallucinations.
+    """
+    if not EVALUATION_AVAILABLE:
+        raise HTTPException(status_code=501, detail="Evaluation modules are not available on this server.")
+
+    try:
+        # 1. Generate Comment using the existing Ollama Service
+        # We assume standard parameters (temperature 0.7) for evaluation
+        gen_result = ollama_service.generate_comment(
+            code=request.code,
+            language=request.language,
+            comment_type="function", # Default to function comments
+            temperature=0.7
+        )
+        generated_comment = gen_result["comment"]
+
+        # 2. Calculate Metrics (if human reference provided)
+        metrics = {}
+        if request.human_comment and metrics_calc:
+            # Wrap in list because calculator expects batch input
+            scores = metrics_calc.compute_per_sample_metrics_safe(
+                [request.human_comment], 
+                [generated_comment]
+            )
+            if scores:
+                metrics = scores[0]
+
+        # 3. Run Hallucination Detection
+        flags = []
+        if hallucination_detector:
+            flags = hallucination_detector.analyze(
+                request.code, 
+                generated_comment, 
+                score_metrics=metrics if metrics else None
+            )
+
+        return EvaluationResponse(
+            generated_comment=generated_comment,
+            metrics=metrics,
+            hallucination_flags=flags
+        )
+
+    except Exception as e:
+        logger.error(f"Error during evaluation: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 if __name__ == "__main__":
