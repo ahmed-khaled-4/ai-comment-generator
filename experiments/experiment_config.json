@@ -1,0 +1,7 @@
+{
+  "parameters": {
+    "model": ["gpt-3.5", "gpt-4"],
+    "temperature": [0.2, 0.5, 0.8],
+    "max_tokens": [100, 200]
+  }
+}
