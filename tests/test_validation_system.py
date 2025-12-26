@@ -661,10 +661,10 @@ def run_all_tests():
     print("="*60)
     
     if passed == total:
-        print("\n🎉 All tests passed! Validation system is working correctly.")
+        print("\n All tests passed! Validation system is working correctly.")
         return True
     else:
-        print(f"\n⚠️  {total - passed} test(s) failed. Please review the errors above.")
+        print(f"\n  {total - passed} test(s) failed. Please review the errors above.")
         return False
 
 
