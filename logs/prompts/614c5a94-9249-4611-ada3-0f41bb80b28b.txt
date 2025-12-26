@@ -1,0 +1,51 @@
+Request ID: 614c5a94-9249-4611-ada3-0f41bb80b28b
+Timestamp: 2025-12-26T01:19:35.461445
+Language: python
+Comment Type: function
+
+============================================================
+CODE:
+============================================================
+def calculate_fibonacci(n):
+    if n <= 1:
+        return n
+    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)
+
+============================================================
+PROMPT:
+============================================================
+You are an expert Python documentation generator.
+
+Generate ONE clean Python docstring for the following code.
+
+STRICT FORMAT (DO NOT MODIFY):
+
+Short description line.
+
+(blank line)
+
+Args:
+    parameter_name: description
+
+(blank line)
+
+Returns:
+    type: description
+
+RULES:
+- Follow EXACTLY the format above.
+- Output ONLY the docstring BODY WITHOUT triple quotes.
+- NEVER repeat the code.
+- NEVER generate more than one docstring.
+- NEVER include explanations.
+- NEVER say "Docstring:" or anything outside the content.
+- Keep it concise and correct.
+
+Code:
+
+def calculate_fibonacci(n):
+    if n <= 1:
+        return n
+    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2)
+
+Return ONLY the formatted docstring body.

@@ -1,0 +1,13 @@
+{
+  "request_id": "cfd82910-bd85-41dd-8edd-ab8c2e384caf",
+  "timestamp": "2025-12-26T01:53:38.359295",
+  "success": true,
+  "temperature": 0.4,
+  "max_tokens": 400,
+  "top_p": 0.9,
+  "latency": 5.686,
+  "prompt_tokens": 261,
+  "completion_tokens": 35,
+  "total_tokens": 296,
+  "model": "deepseek-coder:6.7b"
+}

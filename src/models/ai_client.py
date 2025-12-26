@@ -2,9 +2,11 @@
 import ollama
 import logging
 import re
+import uuid
 from typing import Optional, Dict, Any
 from pathlib import Path
 from .model_config import ModelConfig
+from src.app_logging.logger import log_generation_wrapper, log_error_wrapper
 
 logger = logging.getLogger(__name__)
 
@@ -63,7 +65,8 @@ class OllamaService:
         language: str = "python",
         comment_type: str = "function",
         temperature: Optional[float] = None,
-        max_tokens: Optional[int] = None
+        max_tokens: Optional[int] = None,
+        request_id: Optional[str] = None
     ) -> Dict[str, Any]:
         """
         Generate a comment for the given code.
@@ -74,10 +77,15 @@ class OllamaService:
             comment_type: Type of comment (function, class, inline)
             temperature: Sampling temperature
             max_tokens: Maximum tokens to generate
+            request_id: Optional request ID for logging (auto-generated if not provided)
         
         Returns:
             Dictionary with generated comment and metadata
         """
+        # Generate request ID if not provided
+        if request_id is None:
+            request_id = str(uuid.uuid4())
+        
         try:
             # Use config defaults if not provided
             temperature = temperature if temperature is not None else self.config.temperature
@@ -136,24 +144,56 @@ class OllamaService:
                 if response.prompt_eval_count and response.eval_count:
                     token_usage['total_tokens'] = response.prompt_eval_count + response.eval_count
             
+            metadata = {
+                "request_id": request_id,
+                "temperature": temperature,
+                "max_tokens": max_tokens,
+                "top_p": self.config.top_p,
+                "latency": round(latency, 3),
+                "prompt_tokens": token_usage.get('prompt_tokens'),
+                "completion_tokens": token_usage.get('completion_tokens'),
+                "total_tokens": token_usage.get('total_tokens'),
+                "model": self.model
+            }
+            
+            # Log successful generation
+            log_generation_wrapper(
+                request_id=request_id,
+                code=code,
+                language=language,
+                comment_type=comment_type,
+                prompt=prompt,
+                generated_comment=cleaned_comment,
+                metadata=metadata,
+                success=True,
+                error=None
+            )
+            
             return {
                 "comment": cleaned_comment,
                 "model": self.model,
                 "language": language,
                 "comment_type": comment_type,
-                "metadata": {
-                    "temperature": temperature,
-                    "max_tokens": max_tokens,
-                    "top_p": self.config.top_p,
-                    "latency": round(latency, 3),
-                    "prompt_tokens": token_usage.get('prompt_tokens'),
-                    "completion_tokens": token_usage.get('completion_tokens'),
-                    "total_tokens": token_usage.get('total_tokens')
-                }
+                "metadata": metadata
             }
             
         except Exception as e:
             logger.error(f"Error generating comment: {e}")
+            
+            # Log failed generation
+            log_error_wrapper(
+                request_id=request_id,
+                code=code,
+                language=language,
+                comment_type=comment_type,
+                prompt=prompt if 'prompt' in locals() else "Prompt not generated",
+                error_message=str(e),
+                metadata={
+                    "request_id": request_id,
+                    "model": self.model,
+                    "error_type": type(e).__name__
+                }
+            )
             raise
     
     def _clean_comment(self, comment: str) -> str:
@@ -162,6 +202,14 @@ class OllamaService:
         """
         if not comment:
             return ""
+
+        # Remove markdown code fences (```python, ```, etc.)
+        import re
+        # Remove opening code fence with optional language
+        comment = re.sub(r'^```\w*\s*\n?', '', comment, flags=re.MULTILINE)
+        # Remove closing code fence
+        comment = re.sub(r'\n?```\s*$', '', comment, flags=re.MULTILINE)
+        comment = comment.strip()
 
         # Remove special tokens (some models use these)
         special_tokens = [
@@ -192,6 +240,10 @@ class OllamaService:
 
         for line in lines:
             normalized = line.strip().lower()
+            
+            # Skip markdown code fences
+            if normalized.startswith("```") or normalized == "```":
+                continue
             
             # Skip lines that are just special tokens or noise
             if any(token.lower() in normalized for token in special_tokens):

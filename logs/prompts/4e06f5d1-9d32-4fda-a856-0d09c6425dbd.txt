@@ -1,0 +1,47 @@
+Request ID: 4e06f5d1-9d32-4fda-a856-0d09c6425dbd
+Timestamp: 2025-12-26T01:28:10.193283
+Language: python
+Comment Type: function
+
+============================================================
+CODE:
+============================================================
+def add(a, b):
+    return a + b
+
+============================================================
+PROMPT:
+============================================================
+You are an expert Python documentation generator.
+
+Generate ONE clean Python docstring for the following code.
+
+STRICT FORMAT (DO NOT MODIFY):
+
+Short description line.
+
+(blank line)
+
+Args:
+    parameter_name: description
+
+(blank line)
+
+Returns:
+    type: description
+
+RULES:
+- Follow EXACTLY the format above.
+- Output ONLY the docstring BODY WITHOUT triple quotes.
+- NEVER repeat the code.
+- NEVER generate more than one docstring.
+- NEVER include explanations.
+- NEVER say "Docstring:" or anything outside the content.
+- Keep it concise and correct.
+
+Code:
+
+def add(a, b):
+    return a + b
+
+Return ONLY the formatted docstring body.

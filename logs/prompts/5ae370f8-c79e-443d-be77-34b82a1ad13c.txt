@@ -1,0 +1,42 @@
+Request ID: 5ae370f8-c79e-443d-be77-34b82a1ad13c
+Timestamp: 2025-12-26T01:23:47.443300
+Language: python
+Comment Type: class
+
+============================================================
+CODE:
+============================================================
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+============================================================
+PROMPT:
+============================================================
+You are an expert Python documentation generator.
+
+Write a single, complete Python docstring for the following class, including its methods.
+
+Class:
+class Calculator:
+    def add(self, a, b):
+        return a + b
+
+Docstring format:
+Short sentence describing what the class represents.
+
+Attributes:
+    attribute_name: description
+
+Methods:
+    method_name(args): short description
+
+Rules:
+- Output ONLY the docstring text (no triple quotes, no code).
+- Infer attributes from __init__ parameters and documented instance variables.
+- List important public methods under Methods with a brief description.
+- If there are no attributes, write: "Attributes: None"
+- If there are no public methods, write: "Methods: None"
+- Do NOT repeat the class code or write "Code:".
+
+Docstring:

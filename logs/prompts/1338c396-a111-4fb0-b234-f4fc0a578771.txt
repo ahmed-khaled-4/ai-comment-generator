@@ -1,0 +1,51 @@
+Request ID: 1338c396-a111-4fb0-b234-f4fc0a578771
+Timestamp: 2025-12-25T23:43:30.132692
+Language: python
+Comment Type: function
+
+============================================================
+CODE:
+============================================================
+def calculate_total(items, tax_rate=0.1):
+    subtotal = sum(item['price'] for item in items)
+    tax = subtotal * tax_rate
+    return subtotal + tax
+
+============================================================
+PROMPT:
+============================================================
+You are an expert Python documentation generator.
+
+Generate ONE clean Python docstring for the following code.
+
+STRICT FORMAT (DO NOT MODIFY):
+
+Short description line.
+
+(blank line)
+
+Args:
+    parameter_name: description
+
+(blank line)
+
+Returns:
+    type: description
+
+RULES:
+- Follow EXACTLY the format above.
+- Output ONLY the docstring BODY WITHOUT triple quotes.
+- NEVER repeat the code.
+- NEVER generate more than one docstring.
+- NEVER include explanations.
+- NEVER say "Docstring:" or anything outside the content.
+- Keep it concise and correct.
+
+Code:
+
+def calculate_total(items, tax_rate=0.1):
+    subtotal = sum(item['price'] for item in items)
+    tax = subtotal * tax_rate
+    return subtotal + tax
+
+Return ONLY the formatted docstring body.
