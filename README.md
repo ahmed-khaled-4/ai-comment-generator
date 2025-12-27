@@ -443,7 +443,6 @@ Based on evaluation with DeepSeek-Coder 6.7B:
 
 ## Additional Resources
 
-- **Research Paper**: See `reports/ieee_research_paper.md` for detailed research documentation
 - **Dataset Description**: See `dataset/dataset_description.md` for dataset information
 - **API Documentation**: Interactive docs available at http://localhost:8000/docs when server is running
 
